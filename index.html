@@ -9,20 +9,20 @@
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
         :root {
-            --purple:        #7c3aed;
-            --purple-light:  #a78bfa;
-            --blue:          #2563eb;
-            --cyan:          #06b6d4;
-            --cyan-light:    #67e8f9;
-            --pink:          #ec4899;
-            --glass:         rgba(255,255,255,0.05);
-            --glass-border:  rgba(255,255,255,0.09);
-            --glass-hover:   rgba(255,255,255,0.08);
-            --text:          #f8fafc;
-            --text-2:        rgba(248,250,252,0.6);
-            --text-3:        rgba(248,250,252,0.38);
-            --radius:        16px;
-            --transition:    all 0.28s cubic-bezier(.4,0,.2,1);
+            --purple:       #7c3aed;
+            --purple-light: #a78bfa;
+            --blue:         #2563eb;
+            --cyan:         #06b6d4;
+            --cyan-light:   #67e8f9;
+            --pink:         #ec4899;
+            --glass:        rgba(255,255,255,0.05);
+            --glass-border: rgba(255,255,255,0.09);
+            --glass-hover:  rgba(255,255,255,0.08);
+            --text:         #f8fafc;
+            --text-2:       rgba(248,250,252,0.6);
+            --text-3:       rgba(248,250,252,0.38);
+            --radius:       16px;
+            --transition:   all 0.28s cubic-bezier(.4,0,.2,1);
         }
 
         html, body { height: 100%; }
@@ -40,17 +40,16 @@
             position: fixed; inset: 0; z-index: 0; overflow: hidden;
             background: linear-gradient(135deg, #060010 0%, #000c18 55%, #001408 100%);
         }
-
         .blob {
             position: absolute; border-radius: 50%;
             filter: blur(90px); opacity: 0.38;
             animation: drift ease-in-out infinite;
         }
-        .b1 { width:620px;height:620px; background:radial-gradient(#7c3aed,#4c1d95); top:-200px;left:-180px; animation-duration:19s; }
-        .b2 { width:500px;height:500px; background:radial-gradient(#2563eb,#1e3a8a); top:15%;right:-160px; animation-duration:23s;animation-delay:-6s; }
-        .b3 { width:420px;height:420px; background:radial-gradient(#06b6d4,#0e7490); bottom:-80px;left:28%; animation-duration:26s;animation-delay:-11s; }
-        .b4 { width:320px;height:320px; background:radial-gradient(#ec4899,#9d174d); bottom:18%;right:18%; animation-duration:16s;animation-delay:-4s; }
-        .b5 { width:360px;height:360px; background:radial-gradient(#8b5cf6,#5b21b6); top:48%;left:8%; animation-duration:21s;animation-delay:-9s; }
+        .b1 { width:620px;height:620px;background:radial-gradient(#7c3aed,#4c1d95);top:-200px;left:-180px;animation-duration:19s; }
+        .b2 { width:500px;height:500px;background:radial-gradient(#2563eb,#1e3a8a);top:15%;right:-160px;animation-duration:23s;animation-delay:-6s; }
+        .b3 { width:420px;height:420px;background:radial-gradient(#06b6d4,#0e7490);bottom:-80px;left:28%;animation-duration:26s;animation-delay:-11s; }
+        .b4 { width:320px;height:320px;background:radial-gradient(#ec4899,#9d174d);bottom:18%;right:18%;animation-duration:16s;animation-delay:-4s; }
+        .b5 { width:360px;height:360px;background:radial-gradient(#8b5cf6,#5b21b6);top:48%;left:8%;animation-duration:21s;animation-delay:-9s; }
 
         @keyframes drift {
             0%,100% { transform:translate(0,0) scale(1); }
@@ -58,7 +57,6 @@
             50%      { transform:translate(-18px,28px) scale(0.96); }
             75%      { transform:translate(38px,18px) scale(1.02); }
         }
-
         .bg-grid {
             position:absolute;inset:0;
             background-image:
@@ -69,350 +67,404 @@
 
         /* ── Layout ───────────────────────────────────────────────────── */
         .page {
-            position:relative; z-index:1;
+            position:relative;z-index:1;
             min-height:100vh;
-            display:flex; flex-direction:column;
-            align-items:center; justify-content:center;
-            padding:28px 16px 40px;
+            display:flex;flex-direction:column;
+            align-items:center;justify-content:center;
+            padding:24px 16px 40px;
         }
 
         /* ── Header ───────────────────────────────────────────────────── */
-        .header { text-align:center; margin-bottom:28px; }
-
-        .logo-row {
-            display:inline-flex; align-items:center; gap:14px; margin-bottom:6px;
-        }
-
+        .header { text-align:center;margin-bottom:24px; }
+        .logo-row { display:inline-flex;align-items:center;gap:14px;margin-bottom:6px; }
         .logo-icon {
-            width:50px;height:50px; border-radius:14px;
+            width:50px;height:50px;border-radius:14px;
             background:linear-gradient(135deg,var(--purple),var(--cyan));
-            display:flex;align-items:center;justify-content:center;
-            font-size:26px;
+            display:flex;align-items:center;justify-content:center;font-size:26px;
             box-shadow:0 8px 32px rgba(124,58,237,0.45);
         }
-
         .header h1 {
-            font-size:1.9rem; font-weight:800; letter-spacing:-.5px;
+            font-size:1.9rem;font-weight:800;letter-spacing:-.5px;
             background:linear-gradient(135deg,#fff 20%,var(--purple-light),var(--cyan-light));
-            -webkit-background-clip:text; -webkit-text-fill-color:transparent;
-            background-clip:text;
+            -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
         }
-
-        .header p { color:var(--text-2); font-size:.85rem; margin-top:3px; }
+        .header p { color:var(--text-2);font-size:.85rem;margin-top:3px; }
 
         /* ── Card ─────────────────────────────────────────────────────── */
         .card {
-            width:100%; max-width:560px;
+            width:100%;max-width:580px;
             background:rgba(14,4,38,0.62);
-            backdrop-filter:blur(26px); -webkit-backdrop-filter:blur(26px);
+            backdrop-filter:blur(26px);-webkit-backdrop-filter:blur(26px);
             border:1px solid var(--glass-border);
             border-radius:28px;
-            box-shadow:0 30px 70px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,.08);
+            box-shadow:0 30px 70px rgba(0,0,0,0.55),inset 0 1px 0 rgba(255,255,255,.08);
         }
 
-        .card-body { padding:30px 30px 24px; }
+        /* ── Tab Nav ──────────────────────────────────────────────────── */
+        .tabs {
+            display:flex;gap:4px;
+            padding:18px 24px 0;
+            border-bottom:1px solid rgba(255,255,255,.055);
+        }
+        .tab {
+            padding:9px 20px 12px;
+            background:transparent;border:none;
+            border-bottom:2px solid transparent;
+            color:var(--text-3);font-size:.87rem;font-weight:600;
+            cursor:pointer;transition:var(--transition);
+            display:flex;align-items:center;gap:7px;
+            margin-bottom:-1px;border-radius:0;
+        }
+        .tab:hover { color:var(--text-2); }
+        .tab.active { color:var(--text);border-bottom-color:var(--purple-light); }
+        .tab-ico { font-size:.95rem; }
 
-        /* ── Label ────────────────────────────────────────────────────── */
+        /* ── Tab Panels ───────────────────────────────────────────────── */
+        .tab-panel { animation:tabFade .22s ease; }
+        .tab-panel.hidden { display:none; }
+        @keyframes tabFade { from{opacity:0;transform:translateY(4px)} to{opacity:1;transform:translateY(0)} }
+
+        /* ── Shared label ─────────────────────────────────────────────── */
         .label {
-            display:block; font-size:.7rem; font-weight:700;
-            text-transform:uppercase; letter-spacing:1.1px;
-            color:var(--text-3); margin-bottom:8px;
+            display:block;font-size:.7rem;font-weight:700;
+            text-transform:uppercase;letter-spacing:1.1px;
+            color:var(--text-3);margin-bottom:8px;
         }
 
-        /* ── Amount Input ─────────────────────────────────────────────── */
-        .amount-wrap {
-            position:relative; display:flex; align-items:center;
-            margin-bottom:22px;
-        }
+        /* ── Converter Panel ──────────────────────────────────────────── */
+        .card-body { padding:26px 28px 22px; }
 
+        .amount-wrap { position:relative;display:flex;align-items:center;margin-bottom:20px; }
         .sym {
-            position:absolute; left:16px; z-index:1;
-            font-size:1.3rem; font-weight:700; color:var(--text-2);
-            pointer-events:none; user-select:none;
-            min-width:20px; text-align:center;
+            position:absolute;left:16px;z-index:1;
+            font-size:1.3rem;font-weight:700;color:var(--text-2);
+            pointer-events:none;user-select:none;min-width:20px;text-align:center;
         }
-
         #amount {
-            width:100%; padding:15px 15px 15px 48px;
-            background:rgba(255,255,255,.04);
-            border:1px solid var(--glass-border);
-            border-radius:var(--radius);
-            color:var(--text); font-size:1.6rem; font-weight:800;
-            outline:none; transition:var(--transition);
-            -moz-appearance:textfield;
+            width:100%;padding:15px 15px 15px 48px;
+            background:rgba(255,255,255,.04);border:1px solid var(--glass-border);
+            border-radius:var(--radius);color:var(--text);font-size:1.6rem;font-weight:800;
+            outline:none;transition:var(--transition);-moz-appearance:textfield;
         }
         #amount::-webkit-inner-spin-button,
         #amount::-webkit-outer-spin-button { -webkit-appearance:none; }
-        #amount::placeholder { color:var(--text-3); font-weight:400; }
+        #amount::placeholder { color:var(--text-3);font-weight:400; }
         #amount:focus {
-            border-color:rgba(124,58,237,.55);
-            background:rgba(124,58,237,.06);
+            border-color:rgba(124,58,237,.55);background:rgba(124,58,237,.06);
             box-shadow:0 0 0 3px rgba(124,58,237,.12);
         }
 
-        /* ── Selectors Row ────────────────────────────────────────────── */
         .sel-row {
-            display:grid; grid-template-columns:1fr 44px 1fr;
-            align-items:end; gap:10px; margin-bottom:20px;
+            display:grid;grid-template-columns:1fr 44px 1fr;
+            align-items:end;gap:10px;margin-bottom:20px;
         }
+        .sel-group { display:flex;flex-direction:column; }
 
-        .sel-group { display:flex; flex-direction:column; }
-
-        /* ── Custom Dropdown ──────────────────────────────────────────── */
+        /* ── Custom Dropdown (shared by all 3) ───────────────────────── */
         .csel { position:relative; }
-
         .csel-trigger {
-            width:100%; padding:11px 14px;
-            background:rgba(255,255,255,.04);
-            border:1px solid var(--glass-border);
-            border-radius:var(--radius);
-            color:var(--text); cursor:pointer;
-            display:flex; align-items:center; gap:9px;
-            transition:var(--transition); outline:none; text-align:left;
+            width:100%;padding:11px 14px;
+            background:rgba(255,255,255,.04);border:1px solid var(--glass-border);
+            border-radius:var(--radius);color:var(--text);cursor:pointer;
+            display:flex;align-items:center;gap:9px;
+            transition:var(--transition);outline:none;text-align:left;
         }
-        .csel-trigger:hover { background:var(--glass-hover); border-color:rgba(255,255,255,.14); }
+        .csel-trigger:hover { background:var(--glass-hover);border-color:rgba(255,255,255,.14); }
         .csel-trigger.open {
-            border-color:rgba(124,58,237,.55);
-            background:rgba(124,58,237,.06);
+            border-color:rgba(124,58,237,.55);background:rgba(124,58,237,.06);
             box-shadow:0 0 0 3px rgba(124,58,237,.12);
         }
-
-        .t-flag { font-size:1.25rem; flex-shrink:0; line-height:1; }
-        .t-info { flex:1; min-width:0; overflow:hidden; }
-        .t-code { font-size:.88rem; font-weight:700; }
-        .t-name { font-size:.68rem; color:var(--text-3); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-        .t-arrow { font-size:.55rem; color:var(--text-3); transition:transform .25s ease; flex-shrink:0; }
+        .t-flag { font-size:1.25rem;flex-shrink:0;line-height:1; }
+        .t-info { flex:1;min-width:0;overflow:hidden; }
+        .t-code { font-size:.88rem;font-weight:700; }
+        .t-name { font-size:.68rem;color:var(--text-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis; }
+        .t-arrow { font-size:.55rem;color:var(--text-3);transition:transform .25s ease;flex-shrink:0; }
         .csel-trigger.open .t-arrow { transform:rotate(180deg); }
 
         .csel-panel {
-            position:absolute; top:calc(100% + 8px); left:0; right:0;
+            position:absolute;top:calc(100% + 8px);left:0;right:0;
             background:rgba(12,3,32,.96);
-            backdrop-filter:blur(28px); -webkit-backdrop-filter:blur(28px);
-            border:1px solid rgba(255,255,255,.1); border-radius:18px;
+            backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);
+            border:1px solid rgba(255,255,255,.1);border-radius:18px;
             box-shadow:0 24px 64px rgba(0,0,0,.65);
-            z-index:1000; overflow:hidden;
-            display:none; animation:panelIn .2s cubic-bezier(.4,0,.2,1);
+            z-index:1000;overflow:hidden;
+            display:none;animation:panelIn .2s cubic-bezier(.4,0,.2,1);
         }
         .csel-panel.open { display:block; }
-
         @keyframes panelIn {
-            from { opacity:0; transform:translateY(-6px) scale(.97); }
-            to   { opacity:1; transform:translateY(0) scale(1); }
+            from { opacity:0;transform:translateY(-6px) scale(.97); }
+            to   { opacity:1;transform:translateY(0) scale(1); }
         }
-
-        .search-wrap { position:relative; padding:10px 10px 8px; border-bottom:1px solid rgba(255,255,255,.06); }
+        .search-wrap { position:relative;padding:10px 10px 8px;border-bottom:1px solid rgba(255,255,255,.06); }
         .search-ico { position:absolute;left:20px;top:50%;transform:translateY(-50%);font-size:.78rem;color:var(--text-3);pointer-events:none; }
         .search-inp {
-            width:100%; padding:8px 10px 8px 32px;
-            background:rgba(255,255,255,.05);
-            border:1px solid rgba(255,255,255,.07); border-radius:9px;
-            color:var(--text); font-size:16px; /* 16px prevents iOS zoom */
-            outline:none; transition:var(--transition);
+            width:100%;padding:8px 10px 8px 32px;
+            background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);border-radius:9px;
+            color:var(--text);font-size:16px;outline:none;transition:var(--transition);
         }
-        .search-inp:focus { border-color:rgba(124,58,237,.4); background:rgba(124,58,237,.06); }
-
+        .search-inp:focus { border-color:rgba(124,58,237,.4);background:rgba(124,58,237,.06); }
         .opt-list {
-            max-height:230px; overflow-y:auto;
-            scrollbar-width:thin; scrollbar-color:rgba(124,58,237,.35) transparent;
+            max-height:220px;overflow-y:auto;
+            scrollbar-width:thin;scrollbar-color:rgba(124,58,237,.35) transparent;
         }
         .opt-list::-webkit-scrollbar { width:4px; }
-        .opt-list::-webkit-scrollbar-thumb { background:rgba(124,58,237,.35); border-radius:4px; }
-
+        .opt-list::-webkit-scrollbar-thumb { background:rgba(124,58,237,.35);border-radius:4px; }
         .opt {
-            display:flex; align-items:center; gap:9px;
-            padding:9px 13px; cursor:pointer; transition:background .12s;
+            display:flex;align-items:center;gap:9px;
+            padding:9px 13px;cursor:pointer;transition:background .12s;
         }
-        .opt:hover, .opt.hi { background:rgba(124,58,237,.16); }
+        .opt:hover,.opt.hi { background:rgba(124,58,237,.16); }
         .opt.sel { background:rgba(124,58,237,.22); }
-        .opt-flag { font-size:1.1rem; flex-shrink:0; }
-        .opt-code { font-size:.8rem; font-weight:700; width:38px; flex-shrink:0; }
-        .opt-name { font-size:.72rem; color:var(--text-2); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
-        .no-res { padding:18px; text-align:center; color:var(--text-3); font-size:.82rem; }
+        .opt-flag { font-size:1.1rem;flex-shrink:0; }
+        .opt-code { font-size:.8rem;font-weight:700;width:38px;flex-shrink:0; }
+        .opt-name { font-size:.72rem;color:var(--text-2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap; }
+        .no-res { padding:18px;text-align:center;color:var(--text-3);font-size:.82rem; }
 
         /* ── Swap Button ──────────────────────────────────────────────── */
         .swap-btn {
-            width:44px; height:44px; border-radius:13px;
+            width:44px;height:44px;border-radius:13px;
             background:linear-gradient(135deg,rgba(124,58,237,.28),rgba(6,182,212,.28));
             border:1px solid rgba(255,255,255,.1);
-            color:#fff; cursor:pointer;
-            display:flex; align-items:center; justify-content:center;
-            font-size:1.05rem; transition:var(--transition);
-            align-self:flex-end;
+            color:#fff;cursor:pointer;
+            display:flex;align-items:center;justify-content:center;
+            font-size:1.05rem;transition:var(--transition);align-self:flex-end;
         }
-        .swap-btn:hover {
-            background:linear-gradient(135deg,rgba(124,58,237,.5),rgba(6,182,212,.5));
-            box-shadow:0 6px 22px rgba(124,58,237,.35);
-        }
+        .swap-btn:hover { background:linear-gradient(135deg,rgba(124,58,237,.5),rgba(6,182,212,.5));box-shadow:0 6px 22px rgba(124,58,237,.35); }
         .swap-btn.spin { animation:swapSpin .35s cubic-bezier(.4,0,.2,1); }
         @keyframes swapSpin { from{transform:rotate(0deg)} to{transform:rotate(180deg)} }
 
         /* ── Convert Button ───────────────────────────────────────────── */
         .cvt-btn {
-            width:100%; padding:15px;
+            width:100%;padding:15px;
             background:linear-gradient(135deg,var(--purple),var(--blue) 50%,var(--cyan));
             background-size:200% 200%;
-            border:none; border-radius:var(--radius);
-            color:#fff; font-size:.98rem; font-weight:700;
-            cursor:pointer; letter-spacing:.4px;
-            transition:var(--transition);
-            position:relative; overflow:hidden;
-            animation:gradShift 5s ease infinite;
+            border:none;border-radius:var(--radius);
+            color:#fff;font-size:.98rem;font-weight:700;
+            cursor:pointer;letter-spacing:.4px;transition:var(--transition);
+            position:relative;overflow:hidden;animation:gradShift 5s ease infinite;
         }
         @keyframes gradShift { 0%,100%{background-position:0% 50%} 50%{background-position:100% 50%} }
         .cvt-btn::after {
-            content:''; position:absolute; top:0; left:-100%; width:60%; height:100%;
+            content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;
             background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent);
-            transform:skewX(-20deg); transition:left .5s ease;
+            transform:skewX(-20deg);transition:left .5s ease;
         }
         .cvt-btn:hover::after { left:130%; }
-        .cvt-btn:hover { transform:translateY(-2px); box-shadow:0 12px 38px rgba(124,58,237,.42); }
+        .cvt-btn:hover { transform:translateY(-2px);box-shadow:0 12px 38px rgba(124,58,237,.42); }
         .cvt-btn:active { transform:translateY(0); }
 
         /* ── Result Box ───────────────────────────────────────────────── */
         .result-box {
-            margin-top:20px; padding:22px;
-            background:rgba(255,255,255,.028);
-            border:1px solid rgba(255,255,255,.055);
-            border-radius:20px; position:relative;
-            min-height:118px;
-            display:flex; align-items:center; justify-content:center;
+            margin-top:20px;padding:22px;
+            background:rgba(255,255,255,.028);border:1px solid rgba(255,255,255,.055);
+            border-radius:20px;position:relative;
+            min-height:118px;display:flex;align-items:center;justify-content:center;
         }
-
-        /* empty */
-        .r-empty { display:flex; flex-direction:column; align-items:center; gap:8px; color:var(--text-3); }
-        .r-empty-ico { font-size:2rem; opacity:.4; }
+        .r-empty { display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--text-3); }
+        .r-empty-ico { font-size:2rem;opacity:.4; }
         .r-empty p { font-size:.82rem; }
 
-        /* loading */
-        .r-loading { display:none; flex-direction:column; align-items:center; gap:10px; }
+        .r-loading { display:none;flex-direction:column;align-items:center;gap:10px; }
         .r-loading.on { display:flex; }
         .ring {
-            width:38px; height:38px; border-radius:50%;
+            width:38px;height:38px;border-radius:50%;
             border:3px solid rgba(255,255,255,.1);
-            border-top-color:var(--purple); border-right-color:var(--cyan);
+            border-top-color:var(--purple);border-right-color:var(--cyan);
             animation:spin .75s linear infinite;
         }
         @keyframes spin { to{transform:rotate(360deg)} }
-        .r-loading p { font-size:.8rem; color:var(--text-3); }
+        .r-loading p { font-size:.8rem;color:var(--text-3); }
 
-        /* error */
-        .r-error { display:none; flex-direction:column; align-items:center; gap:8px; }
+        .r-error { display:none;flex-direction:column;align-items:center;gap:8px; }
         .r-error.on { display:flex; }
         .r-error-ico { font-size:1.6rem; }
-        .r-error-msg { font-size:.8rem; color:#f87171; text-align:center; }
+        .r-error-msg { font-size:.8rem;color:#f87171;text-align:center; }
         .retry-btn {
-            padding:5px 16px; background:rgba(239,68,68,.15);
-            border:1px solid rgba(239,68,68,.3); border-radius:8px;
-            color:#f87171; font-size:.78rem; cursor:pointer; transition:var(--transition);
+            padding:5px 16px;background:rgba(239,68,68,.15);
+            border:1px solid rgba(239,68,68,.3);border-radius:8px;
+            color:#f87171;font-size:.78rem;cursor:pointer;transition:var(--transition);
         }
         .retry-btn:hover { background:rgba(239,68,68,.26); }
 
-        /* result */
-        .r-result { display:none; width:100%; }
-        .r-result.on { display:block; animation:fadeUp .35s ease; }
+        .r-result { display:none;width:100%; }
+        .r-result.on { display:block;animation:fadeUp .35s ease; }
         @keyframes fadeUp { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:translateY(0)} }
 
         .res-amount {
-            font-size:2.5rem; font-weight:800; line-height:1.1;
+            font-size:2.5rem;font-weight:800;line-height:1.1;
             background:linear-gradient(135deg,#fff 30%,var(--cyan-light));
-            -webkit-background-clip:text; -webkit-text-fill-color:transparent;
-            background-clip:text;
+            -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
         }
-        .res-label { font-size:.85rem; color:var(--text-2); margin-top:3px; margin-bottom:11px; }
+        .res-label { font-size:.85rem;color:var(--text-2);margin-top:3px;margin-bottom:11px; }
         .rate-pill {
-            display:inline-flex; align-items:center; gap:6px;
-            padding:4px 10px; border-radius:20px;
-            background:rgba(6,182,212,.12); border:1px solid rgba(6,182,212,.22);
-            font-size:.75rem; font-weight:600; color:var(--cyan-light);
+            display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:20px;
+            background:rgba(6,182,212,.12);border:1px solid rgba(6,182,212,.22);
+            font-size:.75rem;font-weight:600;color:var(--cyan-light);
         }
         .live-dot {
-            width:6px;height:6px; border-radius:50%; background:#22c55e;
+            width:6px;height:6px;border-radius:50%;background:#22c55e;
             animation:blink 2s ease-in-out infinite;
         }
         @keyframes blink { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.8)} }
-        .rate-updated { font-size:.68rem; color:var(--text-3); margin-top:7px; }
+        .rate-updated { font-size:.68rem;color:var(--text-3);margin-top:7px; }
 
-        /* copy */
         .copy-btn {
-            position:absolute; top:14px; right:14px;
-            width:34px; height:34px; border-radius:9px;
-            background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08);
-            color:var(--text-2); cursor:pointer; font-size:.82rem;
-            display:none; align-items:center; justify-content:center;
-            transition:var(--transition);
+            position:absolute;top:14px;right:14px;
+            width:34px;height:34px;border-radius:9px;
+            background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);
+            color:var(--text-2);cursor:pointer;font-size:.82rem;
+            display:none;align-items:center;justify-content:center;transition:var(--transition);
         }
-        .copy-btn:hover { background:rgba(124,58,237,.22); border-color:rgba(124,58,237,.4); color:var(--purple-light); }
-        .copy-btn.ok { background:rgba(34,197,94,.18); border-color:rgba(34,197,94,.35); color:#86efac; }
+        .copy-btn:hover { background:rgba(124,58,237,.22);border-color:rgba(124,58,237,.4);color:var(--purple-light); }
+        .copy-btn.ok { background:rgba(34,197,94,.18);border-color:rgba(34,197,94,.35);color:#86efac; }
 
         /* ── Divider ──────────────────────────────────────────────────── */
         .divider {
-            height:1px; margin:0 30px;
+            height:1px;margin:0 28px;
             background:linear-gradient(90deg,transparent,rgba(255,255,255,.06),transparent);
         }
 
         /* ── History ──────────────────────────────────────────────────── */
-        .hist-wrap { padding:20px 30px 28px; }
-
-        .hist-head { display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; }
-        .hist-title { font-size:.68rem; font-weight:700; text-transform:uppercase; letter-spacing:1.1px; color:var(--text-3); }
+        .hist-wrap { padding:18px 28px 26px; }
+        .hist-head { display:flex;align-items:center;justify-content:space-between;margin-bottom:14px; }
+        .hist-title { font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.1px;color:var(--text-3); }
         .hist-clear {
-            font-size:.7rem; color:var(--text-3); background:none;
-            border:none; cursor:pointer; transition:color .2s; padding:2px 5px; border-radius:4px;
+            font-size:.7rem;color:var(--text-3);background:none;
+            border:none;cursor:pointer;transition:color .2s;padding:2px 5px;border-radius:4px;
         }
         .hist-clear:hover { color:#f87171; }
-
-        .hist-list { display:flex; flex-direction:column; gap:7px; }
-
+        .hist-list { display:flex;flex-direction:column;gap:7px; }
         .hist-item {
-            display:flex; align-items:center; gap:6px;
-            padding:10px 12px; border-radius:11px;
-            background:rgba(255,255,255,.025);
-            border:1px solid rgba(255,255,255,.045);
-            cursor:pointer; transition:var(--transition);
-            animation:fadeUp .3s ease;
+            display:flex;align-items:center;gap:6px;
+            padding:10px 12px;border-radius:11px;
+            background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.045);
+            cursor:pointer;transition:var(--transition);animation:fadeUp .3s ease;
         }
-        .hist-item:hover { background:rgba(124,58,237,.1); border-color:rgba(124,58,237,.22); }
-
+        .hist-item:hover { background:rgba(124,58,237,.1);border-color:rgba(124,58,237,.22); }
         .hi-flag { font-size:.95rem; }
-        .hi-amount { font-size:.8rem; font-weight:600; color:var(--text); }
-        .hi-arrow { font-size:.65rem; color:var(--text-3); margin:0 2px; }
-        .hi-result { font-size:.8rem; font-weight:700; color:var(--cyan-light); }
-        .hi-time { font-size:.62rem; color:var(--text-3); margin-left:auto; padding-left:6px; white-space:nowrap; }
+        .hi-amount { font-size:.8rem;font-weight:600;color:var(--text); }
+        .hi-arrow { font-size:.65rem;color:var(--text-3);margin:0 2px; }
+        .hi-result { font-size:.8rem;font-weight:700;color:var(--cyan-light); }
+        .hi-time { font-size:.62rem;color:var(--text-3);margin-left:auto;padding-left:6px;white-space:nowrap; }
+        .hist-empty { text-align:center;color:var(--text-3);font-size:.78rem;padding:12px; }
 
-        .hist-empty { text-align:center; color:var(--text-3); font-size:.78rem; padding:12px; }
+        /* ── Dashboard Panel ──────────────────────────────────────────── */
+        .dash-area { padding:22px 28px 28px; }
+
+        .dash-header {
+            display:flex;align-items:flex-end;
+            justify-content:space-between;gap:16px;
+            margin-bottom:18px;flex-wrap:wrap;
+        }
+        .dash-base-sel { flex:1;min-width:180px; }
+
+        .dash-meta { display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex-shrink:0; }
+        .dash-upd { font-size:.67rem;color:var(--text-3);white-space:nowrap; }
+        .dash-refresh {
+            display:flex;align-items:center;gap:5px;
+            padding:7px 14px;
+            background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.22);border-radius:9px;
+            color:var(--purple-light);font-size:.75rem;font-weight:600;
+            cursor:pointer;transition:var(--transition);
+        }
+        .dash-refresh:hover { background:rgba(124,58,237,.2); }
+        .dash-refresh svg { transition:transform .3s; }
+        .dash-refresh.spinning svg { animation:spin .7s linear infinite; }
+
+        .dash-headline { display:flex;align-items:baseline;gap:8px;margin-bottom:16px; }
+        .dash-eq { font-size:1.05rem;font-weight:800; }
+        .dash-eq-sub { font-size:.72rem;color:var(--text-3); }
+
+        /* Dashboard loading / error */
+        .dash-loading {
+            display:none;flex-direction:column;align-items:center;
+            gap:10px;padding:44px 0;text-align:center;
+        }
+        .dash-loading.on { display:flex; }
+        .dash-loading p { font-size:.8rem;color:var(--text-3); }
+
+        .dash-error {
+            display:none;flex-direction:column;align-items:center;
+            gap:8px;padding:32px 0;
+        }
+        .dash-error.on { display:flex; }
+        .dash-err-ico { font-size:1.8rem; }
+        .dash-err-msg { font-size:.8rem;color:#f87171;text-align:center; }
+
+        /* Rate cards grid */
+        .rates-grid {
+            display:grid;grid-template-columns:repeat(2,1fr);gap:8px;
+            max-height:400px;overflow-y:auto;
+            scrollbar-width:thin;scrollbar-color:rgba(124,58,237,.3) transparent;
+        }
+        .rates-grid::-webkit-scrollbar { width:4px; }
+        .rates-grid::-webkit-scrollbar-thumb { background:rgba(124,58,237,.3);border-radius:4px; }
+
+        .rate-card {
+            display:flex;align-items:center;gap:8px;
+            padding:11px 12px;
+            background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);
+            border-radius:12px;cursor:pointer;transition:var(--transition);min-width:0;
+        }
+        .rate-card:hover:not(.is-base) {
+            background:rgba(124,58,237,.1);border-color:rgba(124,58,237,.24);
+            transform:translateY(-1px);box-shadow:0 4px 16px rgba(124,58,237,.14);
+        }
+        .rate-card.is-base {
+            border-color:rgba(6,182,212,.22);background:rgba(6,182,212,.05);cursor:default;
+        }
+        .rc-flag { font-size:1.25rem;flex-shrink:0; }
+        .rc-info { flex:1;min-width:0; }
+        .rc-code { font-size:.8rem;font-weight:800;line-height:1.2; }
+        .rc-name { font-size:.62rem;color:var(--text-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis; }
+        .rc-rate {
+            font-size:.9rem;font-weight:800;text-align:right;white-space:nowrap;flex-shrink:0;
+            background:linear-gradient(135deg,#fff 20%,var(--cyan-light));
+            -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+        }
+        .rc-base-tag {
+            font-size:.68rem;font-weight:700;color:var(--cyan);padding:2px 7px;
+            background:rgba(6,182,212,.12);border:1px solid rgba(6,182,212,.22);
+            border-radius:6px;flex-shrink:0;
+        }
+        .rc-hint { font-size:.6rem;color:var(--text-3);text-align:right;margin-top:1px; }
 
         /* ── Toast ────────────────────────────────────────────────────── */
         .toast {
-            position:fixed; bottom:22px; right:22px; z-index:9999;
+            position:fixed;bottom:22px;right:22px;z-index:9999;
             padding:11px 18px;
-            background:rgba(12,3,32,.92);
-            backdrop-filter:blur(14px);
-            border:1px solid rgba(255,255,255,.1); border-radius:12px;
-            color:var(--text); font-size:.82rem; font-weight:500;
-            display:flex; align-items:center; gap:8px;
-            transform:translateY(80px); opacity:0;
+            background:rgba(12,3,32,.92);backdrop-filter:blur(14px);
+            border:1px solid rgba(255,255,255,.1);border-radius:12px;
+            color:var(--text);font-size:.82rem;font-weight:500;
+            display:flex;align-items:center;gap:8px;
+            transform:translateY(80px);opacity:0;
             transition:all .3s cubic-bezier(.4,0,.2,1);
-            box-shadow:0 8px 30px rgba(0,0,0,.45);
-            pointer-events:none;
+            box-shadow:0 8px 30px rgba(0,0,0,.45);pointer-events:none;
         }
-        .toast.show { transform:translateY(0); opacity:1; }
+        .toast.show { transform:translateY(0);opacity:1; }
         .toast.s { border-color:rgba(34,197,94,.3); }
         .toast.e { border-color:rgba(239,68,68,.3); }
 
         /* ── Footer ───────────────────────────────────────────────────── */
-        .footer { margin-top:20px; text-align:center; color:var(--text-3); font-size:.72rem; }
-        .footer a { color:var(--purple-light); text-decoration:none; }
+        .footer { margin-top:20px;text-align:center;color:var(--text-3);font-size:.72rem; }
+        .footer a { color:var(--purple-light);text-decoration:none; }
         .footer a:hover { text-decoration:underline; }
 
         /* ── Responsive ───────────────────────────────────────────────── */
         @media(max-width:540px) {
-            .card-body { padding:22px 18px 18px; }
-            .hist-wrap { padding:16px 18px 22px; }
+            .card-body { padding:20px 18px 18px; }
+            .hist-wrap { padding:14px 18px 20px; }
+            .dash-area { padding:18px 18px 22px; }
             .divider { margin:0 18px; }
             .header h1 { font-size:1.45rem; }
             .res-amount { font-size:2rem; }
-            .sel-row { grid-template-columns:1fr 38px 1fr; gap:7px; }
-            .swap-btn { width:38px; height:38px; font-size:.9rem; }
+            .sel-row { grid-template-columns:1fr 38px 1fr;gap:7px; }
+            .swap-btn { width:38px;height:38px;font-size:.9rem; }
+            .dash-header { flex-direction:column;align-items:flex-start;gap:10px; }
+            .dash-meta { flex-direction:row;align-items:center;width:100%;justify-content:space-between; }
+            .rates-grid { grid-template-columns:1fr;max-height:340px; }
+            .tabs { padding:14px 18px 0; }
+            .tab { padding:8px 14px 10px;font-size:.82rem; }
             .b1{width:350px;height:350px;}
             .b2{width:300px;height:300px;}
             .b3{width:260px;height:260px;}
@@ -423,7 +475,7 @@
 </head>
 <body>
 
-<!-- ── Animated Background ──────────────────────────────────────── -->
+<!-- ── Background ──────────────────────────────────────────────── -->
 <div class="bg">
     <div class="blob b1"></div>
     <div class="blob b2"></div>
@@ -447,114 +499,185 @@
 
     <!-- Card -->
     <div class="card">
-        <div class="card-body">
 
-            <!-- Amount -->
-            <label class="label" for="amount">Amount</label>
-            <div class="amount-wrap">
-                <span class="sym" id="sym">₹</span>
-                <input type="number" id="amount" placeholder="0.00" value="1" min="0" step="any" autocomplete="off">
+        <!-- Tab Nav -->
+        <div class="tabs">
+            <button class="tab active" id="tab-conv">
+                <span class="tab-ico">⇄</span> Converter
+            </button>
+            <button class="tab" id="tab-dash">
+                <span class="tab-ico">📊</span> Live Rates
+            </button>
+        </div>
+
+        <!-- ════════════════════════════════════════
+             PANEL 1 — Converter
+             ════════════════════════════════════════ -->
+        <div class="tab-panel" id="panel-conv">
+            <div class="card-body">
+
+                <!-- Amount -->
+                <label class="label" for="amount">Amount</label>
+                <div class="amount-wrap">
+                    <span class="sym" id="sym">₹</span>
+                    <input type="number" id="amount" placeholder="0.00" value="1" min="0" step="any" autocomplete="off">
+                </div>
+
+                <!-- From / Swap / To -->
+                <div class="sel-row">
+
+                    <div class="sel-group">
+                        <span class="label">From</span>
+                        <div class="csel" id="csel-from">
+                            <button class="csel-trigger" id="trg-from" aria-expanded="false" aria-haspopup="listbox">
+                                <span class="t-flag" id="fflag">🇮🇳</span>
+                                <div class="t-info">
+                                    <div class="t-code" id="fcode">INR</div>
+                                    <div class="t-name" id="fname">Indian Rupee</div>
+                                </div>
+                                <span class="t-arrow">▼</span>
+                            </button>
+                            <div class="csel-panel" id="pan-from" role="listbox">
+                                <div class="search-wrap">
+                                    <span class="search-ico">🔍</span>
+                                    <input class="search-inp" id="srch-from" type="text" placeholder="Search…" autocomplete="off" spellcheck="false">
+                                </div>
+                                <div class="opt-list" id="list-from"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="swap-btn" id="swap-btn" title="Swap currencies">⇄</button>
+
+                    <div class="sel-group">
+                        <span class="label">To</span>
+                        <div class="csel" id="csel-to">
+                            <button class="csel-trigger" id="trg-to" aria-expanded="false" aria-haspopup="listbox">
+                                <span class="t-flag" id="tflag">🇺🇸</span>
+                                <div class="t-info">
+                                    <div class="t-code" id="tcode">USD</div>
+                                    <div class="t-name" id="tname">US Dollar</div>
+                                </div>
+                                <span class="t-arrow">▼</span>
+                            </button>
+                            <div class="csel-panel" id="pan-to" role="listbox">
+                                <div class="search-wrap">
+                                    <span class="search-ico">🔍</span>
+                                    <input class="search-inp" id="srch-to" type="text" placeholder="Search…" autocomplete="off" spellcheck="false">
+                                </div>
+                                <div class="opt-list" id="list-to"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <button class="cvt-btn" id="cvt-btn">Convert Now</button>
+
+                <!-- Result -->
+                <div class="result-box" id="result-box">
+                    <div class="r-empty" id="r-empty">
+                        <div class="r-empty-ico">💰</div>
+                        <p>Enter an amount to see the conversion</p>
+                    </div>
+                    <div class="r-loading" id="r-loading">
+                        <div class="ring"></div>
+                        <p>Fetching live rates…</p>
+                    </div>
+                    <div class="r-error" id="r-error">
+                        <div class="r-error-ico">⚠️</div>
+                        <div class="r-error-msg" id="r-error-msg">Could not fetch exchange rates.</div>
+                        <button class="retry-btn" id="retry-btn">Retry</button>
+                    </div>
+                    <div class="r-result" id="r-result">
+                        <div class="res-amount" id="res-amount">0.00</div>
+                        <div class="res-label" id="res-label">US Dollar</div>
+                        <div class="rate-pill">
+                            <div class="live-dot"></div>
+                            <span id="rate-txt">1 INR = 0.012 USD</span>
+                        </div>
+                        <div class="rate-updated" id="rate-upd"></div>
+                    </div>
+                    <button class="copy-btn" id="copy-btn" title="Copy result">📋</button>
+                </div>
+
             </div>
 
-            <!-- From / Swap / To -->
-            <div class="sel-row">
+            <div class="divider"></div>
+            <div class="hist-wrap">
+                <div class="hist-head">
+                    <span class="hist-title">Recent Conversions</span>
+                    <button class="hist-clear" id="hist-clear">Clear all</button>
+                </div>
+                <div class="hist-list" id="hist-list">
+                    <div class="hist-empty">No conversions yet</div>
+                </div>
+            </div>
+        </div>
 
-                <!-- From -->
-                <div class="sel-group">
-                    <span class="label">From</span>
-                    <div class="csel" id="csel-from">
-                        <button class="csel-trigger" id="trg-from" aria-expanded="false" aria-haspopup="listbox">
-                            <span class="t-flag" id="fflag">🇮🇳</span>
-                            <div class="t-info">
-                                <div class="t-code" id="fcode">INR</div>
-                                <div class="t-name" id="fname">Indian Rupee</div>
+        <!-- ════════════════════════════════════════
+             PANEL 2 — Live Rates Dashboard
+             ════════════════════════════════════════ -->
+        <div class="tab-panel hidden" id="panel-dash">
+            <div class="dash-area">
+
+                <!-- Header row: base selector + refresh -->
+                <div class="dash-header">
+                    <div class="dash-base-sel">
+                        <span class="label">Base Currency</span>
+                        <div class="csel" id="csel-base">
+                            <button class="csel-trigger" id="trg-base" aria-expanded="false" aria-haspopup="listbox">
+                                <span class="t-flag" id="bflag">🇮🇳</span>
+                                <div class="t-info">
+                                    <div class="t-code" id="bcode">INR</div>
+                                    <div class="t-name" id="bname">Indian Rupee</div>
+                                </div>
+                                <span class="t-arrow">▼</span>
+                            </button>
+                            <div class="csel-panel" id="pan-base" role="listbox">
+                                <div class="search-wrap">
+                                    <span class="search-ico">🔍</span>
+                                    <input class="search-inp" id="srch-base" type="text" placeholder="Search…" autocomplete="off" spellcheck="false">
+                                </div>
+                                <div class="opt-list" id="list-base"></div>
                             </div>
-                            <span class="t-arrow">▼</span>
-                        </button>
-                        <div class="csel-panel" id="pan-from" role="listbox">
-                            <div class="search-wrap">
-                                <span class="search-ico">🔍</span>
-                                <input class="search-inp" id="srch-from" type="text" placeholder="Search…" autocomplete="off" spellcheck="false">
-                            </div>
-                            <div class="opt-list" id="list-from"></div>
                         </div>
+                    </div>
+
+                    <div class="dash-meta">
+                        <span class="dash-upd" id="dash-upd"></span>
+                        <button class="dash-refresh" id="dash-refresh" title="Refresh rates">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/>
+                                <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+                            </svg>
+                            Refresh
+                        </button>
                     </div>
                 </div>
 
-                <!-- Swap -->
-                <button class="swap-btn" id="swap-btn" title="Swap currencies" aria-label="Swap currencies">⇄</button>
-
-                <!-- To -->
-                <div class="sel-group">
-                    <span class="label">To</span>
-                    <div class="csel" id="csel-to">
-                        <button class="csel-trigger" id="trg-to" aria-expanded="false" aria-haspopup="listbox">
-                            <span class="t-flag" id="tflag">🇺🇸</span>
-                            <div class="t-info">
-                                <div class="t-code" id="tcode">USD</div>
-                                <div class="t-name" id="tname">US Dollar</div>
-                            </div>
-                            <span class="t-arrow">▼</span>
-                        </button>
-                        <div class="csel-panel" id="pan-to" role="listbox">
-                            <div class="search-wrap">
-                                <span class="search-ico">🔍</span>
-                                <input class="search-inp" id="srch-to" type="text" placeholder="Search…" autocomplete="off" spellcheck="false">
-                            </div>
-                            <div class="opt-list" id="list-to"></div>
-                        </div>
-                    </div>
+                <!-- "1 XXX =" headline -->
+                <div class="dash-headline">
+                    <span class="dash-eq" id="dash-eq">1 INR =</span>
+                    <span class="dash-eq-sub">30 major world currencies · click any to convert</span>
                 </div>
 
-            </div><!-- /sel-row -->
-
-            <!-- Convert button -->
-            <button class="cvt-btn" id="cvt-btn">Convert Now</button>
-
-            <!-- Result -->
-            <div class="result-box" id="result-box">
-
-                <div class="r-empty" id="r-empty">
-                    <div class="r-empty-ico">💰</div>
-                    <p>Enter an amount to see the conversion</p>
-                </div>
-
-                <div class="r-loading" id="r-loading">
+                <!-- Loading state -->
+                <div class="dash-loading" id="dash-loading">
                     <div class="ring"></div>
                     <p>Fetching live rates…</p>
                 </div>
 
-                <div class="r-error" id="r-error">
-                    <div class="r-error-ico">⚠️</div>
-                    <div class="r-error-msg" id="r-error-msg">Could not fetch exchange rates.</div>
-                    <button class="retry-btn" id="retry-btn">Retry</button>
+                <!-- Error state -->
+                <div class="dash-error" id="dash-error">
+                    <div class="dash-err-ico">⚠️</div>
+                    <div class="dash-err-msg" id="dash-err-msg">Could not load rates.</div>
+                    <button class="retry-btn" id="dash-retry">Retry</button>
                 </div>
 
-                <div class="r-result" id="r-result">
-                    <div class="res-amount" id="res-amount">0.00</div>
-                    <div class="res-label" id="res-label">US Dollar</div>
-                    <div class="rate-pill">
-                        <div class="live-dot"></div>
-                        <span id="rate-txt">1 INR = 0.012 USD</span>
-                    </div>
-                    <div class="rate-updated" id="rate-upd"></div>
-                </div>
+                <!-- Rate cards grid -->
+                <div class="rates-grid" id="rates-grid" style="display:none"></div>
 
-                <button class="copy-btn" id="copy-btn" title="Copy result" aria-label="Copy result">📋</button>
-
-            </div><!-- /result-box -->
-
-        </div><!-- /card-body -->
-
-        <!-- History -->
-        <div class="divider"></div>
-        <div class="hist-wrap">
-            <div class="hist-head">
-                <span class="hist-title">Recent Conversions</span>
-                <button class="hist-clear" id="hist-clear">Clear all</button>
-            </div>
-            <div class="hist-list" id="hist-list">
-                <div class="hist-empty">No conversions yet</div>
             </div>
         </div>
 
@@ -564,7 +687,7 @@
         <p>Rates by <a href="https://open.er-api.com" target="_blank" rel="noopener">Open Exchange Rates API</a> · Updated every 24 hours</p>
     </div>
 
-</div><!-- /page -->
+</div>
 
 <!-- Toast -->
 <div class="toast" id="toast">
@@ -574,166 +697,88 @@
 
 <script>
 /* ================================================================
-   CURRENCY DATA — 155 currencies with flag emojis
+   CURRENCY DATA — 154 currencies with flag emojis
    ================================================================ */
 const CUR = {
-    AED:{n:'UAE Dirham',f:'🇦🇪'},
-    AFN:{n:'Afghan Afghani',f:'🇦🇫'},
-    ALL:{n:'Albanian Lek',f:'🇦🇱'},
-    AMD:{n:'Armenian Dram',f:'🇦🇲'},
-    ANG:{n:'Netherlands Antillean Guilder',f:'🇳🇱'},
-    AOA:{n:'Angolan Kwanza',f:'🇦🇴'},
-    ARS:{n:'Argentine Peso',f:'🇦🇷'},
-    AUD:{n:'Australian Dollar',f:'🇦🇺'},
-    AWG:{n:'Aruban Florin',f:'🇦🇼'},
-    AZN:{n:'Azerbaijani Manat',f:'🇦🇿'},
-    BAM:{n:'Bosnia-Herzegovina Mark',f:'🇧🇦'},
-    BBD:{n:'Barbadian Dollar',f:'🇧🇧'},
-    BDT:{n:'Bangladeshi Taka',f:'🇧🇩'},
-    BGN:{n:'Bulgarian Lev',f:'🇧🇬'},
-    BHD:{n:'Bahraini Dinar',f:'🇧🇭'},
-    BIF:{n:'Burundian Franc',f:'🇧🇮'},
-    BMD:{n:'Bermudian Dollar',f:'🇧🇲'},
-    BND:{n:'Brunei Dollar',f:'🇧🇳'},
-    BOB:{n:'Bolivian Boliviano',f:'🇧🇴'},
-    BRL:{n:'Brazilian Real',f:'🇧🇷'},
-    BSD:{n:'Bahamian Dollar',f:'🇧🇸'},
-    BTN:{n:'Bhutanese Ngultrum',f:'🇧🇹'},
-    BWP:{n:'Botswana Pula',f:'🇧🇼'},
-    BYN:{n:'Belarusian Ruble',f:'🇧🇾'},
-    BZD:{n:'Belize Dollar',f:'🇧🇿'},
-    CAD:{n:'Canadian Dollar',f:'🇨🇦'},
-    CDF:{n:'Congolese Franc',f:'🇨🇩'},
-    CHF:{n:'Swiss Franc',f:'🇨🇭'},
-    CLP:{n:'Chilean Peso',f:'🇨🇱'},
-    CNY:{n:'Chinese Yuan',f:'🇨🇳'},
-    COP:{n:'Colombian Peso',f:'🇨🇴'},
-    CRC:{n:'Costa Rican Colón',f:'🇨🇷'},
-    CUP:{n:'Cuban Peso',f:'🇨🇺'},
-    CVE:{n:'Cape Verdean Escudo',f:'🇨🇻'},
-    CZK:{n:'Czech Koruna',f:'🇨🇿'},
-    DJF:{n:'Djiboutian Franc',f:'🇩🇯'},
-    DKK:{n:'Danish Krone',f:'🇩🇰'},
-    DOP:{n:'Dominican Peso',f:'🇩🇴'},
-    DZD:{n:'Algerian Dinar',f:'🇩🇿'},
-    EGP:{n:'Egyptian Pound',f:'🇪🇬'},
-    ERN:{n:'Eritrean Nakfa',f:'🇪🇷'},
-    ETB:{n:'Ethiopian Birr',f:'🇪🇹'},
-    EUR:{n:'Euro',f:'🇪🇺'},
-    FJD:{n:'Fijian Dollar',f:'🇫🇯'},
-    FKP:{n:'Falkland Islands Pound',f:'🇫🇰'},
-    GBP:{n:'British Pound Sterling',f:'🇬🇧'},
-    GEL:{n:'Georgian Lari',f:'🇬🇪'},
-    GHS:{n:'Ghanaian Cedi',f:'🇬🇭'},
-    GIP:{n:'Gibraltar Pound',f:'🇬🇮'},
-    GMD:{n:'Gambian Dalasi',f:'🇬🇲'},
-    GNF:{n:'Guinean Franc',f:'🇬🇳'},
-    GTQ:{n:'Guatemalan Quetzal',f:'🇬🇹'},
-    GYD:{n:'Guyanese Dollar',f:'🇬🇾'},
-    HKD:{n:'Hong Kong Dollar',f:'🇭🇰'},
-    HNL:{n:'Honduran Lempira',f:'🇭🇳'},
-    HTG:{n:'Haitian Gourde',f:'🇭🇹'},
-    HUF:{n:'Hungarian Forint',f:'🇭🇺'},
-    IDR:{n:'Indonesian Rupiah',f:'🇮🇩'},
-    ILS:{n:'Israeli New Shekel',f:'🇮🇱'},
-    INR:{n:'Indian Rupee',f:'🇮🇳'},
-    IQD:{n:'Iraqi Dinar',f:'🇮🇶'},
-    IRR:{n:'Iranian Rial',f:'🇮🇷'},
-    ISK:{n:'Icelandic Króna',f:'🇮🇸'},
-    JMD:{n:'Jamaican Dollar',f:'🇯🇲'},
-    JOD:{n:'Jordanian Dinar',f:'🇯🇴'},
-    JPY:{n:'Japanese Yen',f:'🇯🇵'},
-    KES:{n:'Kenyan Shilling',f:'🇰🇪'},
-    KGS:{n:'Kyrgyzstani Som',f:'🇰🇬'},
-    KHR:{n:'Cambodian Riel',f:'🇰🇭'},
-    KMF:{n:'Comorian Franc',f:'🇰🇲'},
-    KRW:{n:'South Korean Won',f:'🇰🇷'},
-    KWD:{n:'Kuwaiti Dinar',f:'🇰🇼'},
-    KYD:{n:'Cayman Islands Dollar',f:'🇰🇾'},
-    KZT:{n:'Kazakhstani Tenge',f:'🇰🇿'},
-    LAK:{n:'Lao Kip',f:'🇱🇦'},
-    LBP:{n:'Lebanese Pound',f:'🇱🇧'},
-    LKR:{n:'Sri Lankan Rupee',f:'🇱🇰'},
-    LRD:{n:'Liberian Dollar',f:'🇱🇷'},
-    LSL:{n:'Lesotho Loti',f:'🇱🇸'},
-    LYD:{n:'Libyan Dinar',f:'🇱🇾'},
-    MAD:{n:'Moroccan Dirham',f:'🇲🇦'},
-    MDL:{n:'Moldovan Leu',f:'🇲🇩'},
-    MGA:{n:'Malagasy Ariary',f:'🇲🇬'},
-    MKD:{n:'Macedonian Denar',f:'🇲🇰'},
-    MMK:{n:'Myanmar Kyat',f:'🇲🇲'},
-    MNT:{n:'Mongolian Tögrög',f:'🇲🇳'},
-    MOP:{n:'Macanese Pataca',f:'🇲🇴'},
-    MRU:{n:'Mauritanian Ouguiya',f:'🇲🇷'},
-    MUR:{n:'Mauritian Rupee',f:'🇲🇺'},
-    MVR:{n:'Maldivian Rufiyaa',f:'🇲🇻'},
-    MWK:{n:'Malawian Kwacha',f:'🇲🇼'},
-    MXN:{n:'Mexican Peso',f:'🇲🇽'},
-    MYR:{n:'Malaysian Ringgit',f:'🇲🇾'},
-    MZN:{n:'Mozambican Metical',f:'🇲🇿'},
-    NAD:{n:'Namibian Dollar',f:'🇳🇦'},
-    NGN:{n:'Nigerian Naira',f:'🇳🇬'},
-    NIO:{n:'Nicaraguan Córdoba',f:'🇳🇮'},
-    NOK:{n:'Norwegian Krone',f:'🇳🇴'},
-    NPR:{n:'Nepalese Rupee',f:'🇳🇵'},
-    NZD:{n:'New Zealand Dollar',f:'🇳🇿'},
-    OMR:{n:'Omani Rial',f:'🇴🇲'},
-    PAB:{n:'Panamanian Balboa',f:'🇵🇦'},
-    PEN:{n:'Peruvian Sol',f:'🇵🇪'},
-    PGK:{n:'Papua New Guinean Kina',f:'🇵🇬'},
-    PHP:{n:'Philippine Peso',f:'🇵🇭'},
-    PKR:{n:'Pakistani Rupee',f:'🇵🇰'},
-    PLN:{n:'Polish Złoty',f:'🇵🇱'},
-    PYG:{n:'Paraguayan Guaraní',f:'🇵🇾'},
-    QAR:{n:'Qatari Riyal',f:'🇶🇦'},
-    RON:{n:'Romanian Leu',f:'🇷🇴'},
-    RSD:{n:'Serbian Dinar',f:'🇷🇸'},
-    RUB:{n:'Russian Ruble',f:'🇷🇺'},
-    RWF:{n:'Rwandan Franc',f:'🇷🇼'},
-    SAR:{n:'Saudi Riyal',f:'🇸🇦'},
-    SBD:{n:'Solomon Islands Dollar',f:'🇸🇧'},
-    SCR:{n:'Seychellois Rupee',f:'🇸🇨'},
-    SDG:{n:'Sudanese Pound',f:'🇸🇩'},
-    SEK:{n:'Swedish Krona',f:'🇸🇪'},
-    SGD:{n:'Singapore Dollar',f:'🇸🇬'},
-    SHP:{n:'Saint Helena Pound',f:'🇸🇭'},
-    SLL:{n:'Sierra Leonean Leone',f:'🇸🇱'},
-    SOS:{n:'Somali Shilling',f:'🇸🇴'},
-    SRD:{n:'Surinamese Dollar',f:'🇸🇷'},
-    SSP:{n:'South Sudanese Pound',f:'🇸🇸'},
-    STN:{n:'São Tomé & Príncipe Dobra',f:'🇸🇹'},
-    SVC:{n:'Salvadoran Colón',f:'🇸🇻'},
-    SYP:{n:'Syrian Pound',f:'🇸🇾'},
-    SZL:{n:'Swazi Lilangeni',f:'🇸🇿'},
-    THB:{n:'Thai Baht',f:'🇹🇭'},
-    TJS:{n:'Tajikistani Somoni',f:'🇹🇯'},
-    TMT:{n:'Turkmenistani Manat',f:'🇹🇲'},
-    TND:{n:'Tunisian Dinar',f:'🇹🇳'},
-    TOP:{n:"Tongan Paʻanga",f:'🇹🇴'},
-    TRY:{n:'Turkish Lira',f:'🇹🇷'},
-    TTD:{n:'Trinidad & Tobago Dollar',f:'🇹🇹'},
-    TWD:{n:'New Taiwan Dollar',f:'🇹🇼'},
-    TZS:{n:'Tanzanian Shilling',f:'🇹🇿'},
-    UAH:{n:'Ukrainian Hryvnia',f:'🇺🇦'},
-    UGX:{n:'Ugandan Shilling',f:'🇺🇬'},
-    USD:{n:'US Dollar',f:'🇺🇸'},
-    UYU:{n:'Uruguayan Peso',f:'🇺🇾'},
-    UZS:{n:'Uzbekistani Som',f:'🇺🇿'},
-    VES:{n:'Venezuelan Bolívar',f:'🇻🇪'},
-    VND:{n:'Vietnamese Đồng',f:'🇻🇳'},
-    VUV:{n:'Vanuatu Vatu',f:'🇻🇺'},
-    WST:{n:'Samoan Tālā',f:'🇼🇸'},
-    XAF:{n:'Central African CFA Franc',f:'🌍'},
-    XCD:{n:'East Caribbean Dollar',f:'🌎'},
-    XOF:{n:'West African CFA Franc',f:'🌍'},
-    XPF:{n:'CFP Franc',f:'🌊'},
-    YER:{n:'Yemeni Rial',f:'🇾🇪'},
-    ZAR:{n:'South African Rand',f:'🇿🇦'},
-    ZMW:{n:'Zambian Kwacha',f:'🇿🇲'},
-    ZWL:{n:'Zimbabwean Dollar',f:'🇿🇼'},
+    AED:{n:'UAE Dirham',f:'🇦🇪'},AFN:{n:'Afghan Afghani',f:'🇦🇫'},
+    ALL:{n:'Albanian Lek',f:'🇦🇱'},AMD:{n:'Armenian Dram',f:'🇦🇲'},
+    ANG:{n:'Netherlands Antillean Guilder',f:'🇳🇱'},AOA:{n:'Angolan Kwanza',f:'🇦🇴'},
+    ARS:{n:'Argentine Peso',f:'🇦🇷'},AUD:{n:'Australian Dollar',f:'🇦🇺'},
+    AWG:{n:'Aruban Florin',f:'🇦🇼'},AZN:{n:'Azerbaijani Manat',f:'🇦🇿'},
+    BAM:{n:'Bosnia-Herzegovina Mark',f:'🇧🇦'},BBD:{n:'Barbadian Dollar',f:'🇧🇧'},
+    BDT:{n:'Bangladeshi Taka',f:'🇧🇩'},BGN:{n:'Bulgarian Lev',f:'🇧🇬'},
+    BHD:{n:'Bahraini Dinar',f:'🇧🇭'},BIF:{n:'Burundian Franc',f:'🇧🇮'},
+    BMD:{n:'Bermudian Dollar',f:'🇧🇲'},BND:{n:'Brunei Dollar',f:'🇧🇳'},
+    BOB:{n:'Bolivian Boliviano',f:'🇧🇴'},BRL:{n:'Brazilian Real',f:'🇧🇷'},
+    BSD:{n:'Bahamian Dollar',f:'🇧🇸'},BTN:{n:'Bhutanese Ngultrum',f:'🇧🇹'},
+    BWP:{n:'Botswana Pula',f:'🇧🇼'},BYN:{n:'Belarusian Ruble',f:'🇧🇾'},
+    BZD:{n:'Belize Dollar',f:'🇧🇿'},CAD:{n:'Canadian Dollar',f:'🇨🇦'},
+    CDF:{n:'Congolese Franc',f:'🇨🇩'},CHF:{n:'Swiss Franc',f:'🇨🇭'},
+    CLP:{n:'Chilean Peso',f:'🇨🇱'},CNY:{n:'Chinese Yuan',f:'🇨🇳'},
+    COP:{n:'Colombian Peso',f:'🇨🇴'},CRC:{n:'Costa Rican Colón',f:'🇨🇷'},
+    CUP:{n:'Cuban Peso',f:'🇨🇺'},CVE:{n:'Cape Verdean Escudo',f:'🇨🇻'},
+    CZK:{n:'Czech Koruna',f:'🇨🇿'},DJF:{n:'Djiboutian Franc',f:'🇩🇯'},
+    DKK:{n:'Danish Krone',f:'🇩🇰'},DOP:{n:'Dominican Peso',f:'🇩🇴'},
+    DZD:{n:'Algerian Dinar',f:'🇩🇿'},EGP:{n:'Egyptian Pound',f:'🇪🇬'},
+    ERN:{n:'Eritrean Nakfa',f:'🇪🇷'},ETB:{n:'Ethiopian Birr',f:'🇪🇹'},
+    EUR:{n:'Euro',f:'🇪🇺'},FJD:{n:'Fijian Dollar',f:'🇫🇯'},
+    FKP:{n:'Falkland Islands Pound',f:'🇫🇰'},GBP:{n:'British Pound Sterling',f:'🇬🇧'},
+    GEL:{n:'Georgian Lari',f:'🇬🇪'},GHS:{n:'Ghanaian Cedi',f:'🇬🇭'},
+    GIP:{n:'Gibraltar Pound',f:'🇬🇮'},GMD:{n:'Gambian Dalasi',f:'🇬🇲'},
+    GNF:{n:'Guinean Franc',f:'🇬🇳'},GTQ:{n:'Guatemalan Quetzal',f:'🇬🇹'},
+    GYD:{n:'Guyanese Dollar',f:'🇬🇾'},HKD:{n:'Hong Kong Dollar',f:'🇭🇰'},
+    HNL:{n:'Honduran Lempira',f:'🇭🇳'},HTG:{n:'Haitian Gourde',f:'🇭🇹'},
+    HUF:{n:'Hungarian Forint',f:'🇭🇺'},IDR:{n:'Indonesian Rupiah',f:'🇮🇩'},
+    ILS:{n:'Israeli New Shekel',f:'🇮🇱'},INR:{n:'Indian Rupee',f:'🇮🇳'},
+    IQD:{n:'Iraqi Dinar',f:'🇮🇶'},IRR:{n:'Iranian Rial',f:'🇮🇷'},
+    ISK:{n:'Icelandic Króna',f:'🇮🇸'},JMD:{n:'Jamaican Dollar',f:'🇯🇲'},
+    JOD:{n:'Jordanian Dinar',f:'🇯🇴'},JPY:{n:'Japanese Yen',f:'🇯🇵'},
+    KES:{n:'Kenyan Shilling',f:'🇰🇪'},KGS:{n:'Kyrgyzstani Som',f:'🇰🇬'},
+    KHR:{n:'Cambodian Riel',f:'🇰🇭'},KMF:{n:'Comorian Franc',f:'🇰🇲'},
+    KRW:{n:'South Korean Won',f:'🇰🇷'},KWD:{n:'Kuwaiti Dinar',f:'🇰🇼'},
+    KYD:{n:'Cayman Islands Dollar',f:'🇰🇾'},KZT:{n:'Kazakhstani Tenge',f:'🇰🇿'},
+    LAK:{n:'Lao Kip',f:'🇱🇦'},LBP:{n:'Lebanese Pound',f:'🇱🇧'},
+    LKR:{n:'Sri Lankan Rupee',f:'🇱🇰'},LRD:{n:'Liberian Dollar',f:'🇱🇷'},
+    LSL:{n:'Lesotho Loti',f:'🇱🇸'},LYD:{n:'Libyan Dinar',f:'🇱🇾'},
+    MAD:{n:'Moroccan Dirham',f:'🇲🇦'},MDL:{n:'Moldovan Leu',f:'🇲🇩'},
+    MGA:{n:'Malagasy Ariary',f:'🇲🇬'},MKD:{n:'Macedonian Denar',f:'🇲🇰'},
+    MMK:{n:'Myanmar Kyat',f:'🇲🇲'},MNT:{n:'Mongolian Tögrög',f:'🇲🇳'},
+    MOP:{n:'Macanese Pataca',f:'🇲🇴'},MRU:{n:'Mauritanian Ouguiya',f:'🇲🇷'},
+    MUR:{n:'Mauritian Rupee',f:'🇲🇺'},MVR:{n:'Maldivian Rufiyaa',f:'🇲🇻'},
+    MWK:{n:'Malawian Kwacha',f:'🇲🇼'},MXN:{n:'Mexican Peso',f:'🇲🇽'},
+    MYR:{n:'Malaysian Ringgit',f:'🇲🇾'},MZN:{n:'Mozambican Metical',f:'🇲🇿'},
+    NAD:{n:'Namibian Dollar',f:'🇳🇦'},NGN:{n:'Nigerian Naira',f:'🇳🇬'},
+    NIO:{n:'Nicaraguan Córdoba',f:'🇳🇮'},NOK:{n:'Norwegian Krone',f:'🇳🇴'},
+    NPR:{n:'Nepalese Rupee',f:'🇳🇵'},NZD:{n:'New Zealand Dollar',f:'🇳🇿'},
+    OMR:{n:'Omani Rial',f:'🇴🇲'},PAB:{n:'Panamanian Balboa',f:'🇵🇦'},
+    PEN:{n:'Peruvian Sol',f:'🇵🇪'},PGK:{n:'Papua New Guinean Kina',f:'🇵🇬'},
+    PHP:{n:'Philippine Peso',f:'🇵🇭'},PKR:{n:'Pakistani Rupee',f:'🇵🇰'},
+    PLN:{n:'Polish Złoty',f:'🇵🇱'},PYG:{n:'Paraguayan Guaraní',f:'🇵🇾'},
+    QAR:{n:'Qatari Riyal',f:'🇶🇦'},RON:{n:'Romanian Leu',f:'🇷🇴'},
+    RSD:{n:'Serbian Dinar',f:'🇷🇸'},RUB:{n:'Russian Ruble',f:'🇷🇺'},
+    RWF:{n:'Rwandan Franc',f:'🇷🇼'},SAR:{n:'Saudi Riyal',f:'🇸🇦'},
+    SBD:{n:'Solomon Islands Dollar',f:'🇸🇧'},SCR:{n:'Seychellois Rupee',f:'🇸🇨'},
+    SDG:{n:'Sudanese Pound',f:'🇸🇩'},SEK:{n:'Swedish Krona',f:'🇸🇪'},
+    SGD:{n:'Singapore Dollar',f:'🇸🇬'},SHP:{n:'Saint Helena Pound',f:'🇸🇭'},
+    SLL:{n:'Sierra Leonean Leone',f:'🇸🇱'},SOS:{n:'Somali Shilling',f:'🇸🇴'},
+    SRD:{n:'Surinamese Dollar',f:'🇸🇷'},SSP:{n:'South Sudanese Pound',f:'🇸🇸'},
+    STN:{n:'São Tomé & Príncipe Dobra',f:'🇸🇹'},SVC:{n:'Salvadoran Colón',f:'🇸🇻'},
+    SYP:{n:'Syrian Pound',f:'🇸🇾'},SZL:{n:'Swazi Lilangeni',f:'🇸🇿'},
+    THB:{n:'Thai Baht',f:'🇹🇭'},TJS:{n:'Tajikistani Somoni',f:'🇹🇯'},
+    TMT:{n:'Turkmenistani Manat',f:'🇹🇲'},TND:{n:'Tunisian Dinar',f:'🇹🇳'},
+    TOP:{n:"Tongan Paʻanga",f:'🇹🇴'},TRY:{n:'Turkish Lira',f:'🇹🇷'},
+    TTD:{n:'Trinidad & Tobago Dollar',f:'🇹🇹'},TWD:{n:'New Taiwan Dollar',f:'🇹🇼'},
+    TZS:{n:'Tanzanian Shilling',f:'🇹🇿'},UAH:{n:'Ukrainian Hryvnia',f:'🇺🇦'},
+    UGX:{n:'Ugandan Shilling',f:'🇺🇬'},USD:{n:'US Dollar',f:'🇺🇸'},
+    UYU:{n:'Uruguayan Peso',f:'🇺🇾'},UZS:{n:'Uzbekistani Som',f:'🇺🇿'},
+    VES:{n:'Venezuelan Bolívar',f:'🇻🇪'},VND:{n:'Vietnamese Đồng',f:'🇻🇳'},
+    VUV:{n:'Vanuatu Vatu',f:'🇻🇺'},WST:{n:'Samoan Tālā',f:'🇼🇸'},
+    XAF:{n:'Central African CFA Franc',f:'🌍'},XCD:{n:'East Caribbean Dollar',f:'🌎'},
+    XOF:{n:'West African CFA Franc',f:'🌍'},XPF:{n:'CFP Franc',f:'🌊'},
+    YER:{n:'Yemeni Rial',f:'🇾🇪'},ZAR:{n:'South African Rand',f:'🇿🇦'},
+    ZMW:{n:'Zambian Kwacha',f:'🇿🇲'},ZWL:{n:'Zimbabwean Dollar',f:'🇿🇼'},
 };
 
-/* Currency input symbols for the "From" amount field */
 const SYM = {
     USD:'$',EUR:'€',GBP:'£',JPY:'¥',INR:'₹',CNY:'¥',KRW:'₩',
     RUB:'₽',BRL:'R$',MXN:'$',CAD:'C$',AUD:'A$',CHF:'Fr',
@@ -744,295 +789,34 @@ const SYM = {
     AED:'د.إ',SAR:'﷼',QAR:'﷼',KWD:'د.ك',OMR:'﷼',
 };
 
-/* Currencies that don't use decimal places */
 const NO_DEC = new Set(['JPY','KRW','IDR','VND','MNT','UGX','RWF','BIF',
     'GNF','XOF','XAF','PYG','CLP','KMF','DJF','SLL','SOS','IRR','LAK','MMK']);
+
+/* 30 major currencies shown in the dashboard */
+const MAJOR = [
+    'USD','EUR','GBP','JPY','CAD','AUD','CHF','CNY',
+    'HKD','SGD','KRW','MXN','BRL','ZAR','NZD','SEK',
+    'NOK','DKK','THB','MYR','AED','SAR','TRY','PLN',
+    'RUB','ILS','PHP','IDR','TWD','QAR',
+];
 
 /* ================================================================
    STATE
    ================================================================ */
-let FROM = 'INR';
-let TO   = 'USD';
-let history = JSON.parse(localStorage.getItem('ch') || '[]');
+let FROM      = 'INR';
+let TO        = 'USD';
+let activeTab = 'conv';
 let debTimer  = null;
 let lastUpd   = '';
-let lastResult = null; // {converted, rate}
+let convHistory = JSON.parse(localStorage.getItem('ch') || '[]');
+
+/* Shared rate cache — reused by both Converter and Dashboard */
+let ratesCache = null; // {base, rates, updatedAt, fetchedAt}
 
 /* ================================================================
-   DOM
+   HELPERS
    ================================================================ */
 const $ = id => document.getElementById(id);
-
-const amountEl  = $('amount');
-const symEl     = $('sym');
-
-const trgFrom   = $('trg-from');
-const panFrom   = $('pan-from');
-const srchFrom  = $('srch-from');
-const listFrom  = $('list-from');
-const fflagEl   = $('fflag');
-const fcodeEl   = $('fcode');
-const fnameEl   = $('fname');
-
-const trgTo     = $('trg-to');
-const panTo     = $('pan-to');
-const srchTo    = $('srch-to');
-const listTo    = $('list-to');
-const tflagEl   = $('tflag');
-const tcodeEl   = $('tcode');
-const tnameEl   = $('tname');
-
-const swapBtn   = $('swap-btn');
-const cvtBtn    = $('cvt-btn');
-const copyBtn   = $('copy-btn');
-const retryBtn  = $('retry-btn');
-const histClear = $('hist-clear');
-const histList  = $('hist-list');
-
-const rEmpty    = $('r-empty');
-const rLoading  = $('r-loading');
-const rError    = $('r-error');
-const rResult   = $('r-result');
-const rErrMsg   = $('r-error-msg');
-const resAmount = $('res-amount');
-const resLabel  = $('res-label');
-const rateTxt   = $('rate-txt');
-const rateUpd   = $('rate-upd');
-
-const toastEl   = $('toast');
-const tIco      = $('t-ico');
-const tTxt      = $('t-txt');
-
-/* ================================================================
-   BUILD OPTION LISTS
-   ================================================================ */
-(function buildLists() {
-    const entries = Object.entries(CUR).sort((a,b) => a[0].localeCompare(b[0]));
-    entries.forEach(([code, d]) => {
-        listFrom.appendChild(makeOpt(code, d, 'from'));
-        listTo.appendChild(makeOpt(code, d, 'to'));
-    });
-})();
-
-function makeOpt(code, d, side) {
-    const el = document.createElement('div');
-    el.className = 'opt';
-    el.dataset.code = code;
-    el.setAttribute('role','option');
-    el.innerHTML = `<span class="opt-flag">${d.f}</span><span class="opt-code">${code}</span><span class="opt-name">${d.n}</span>`;
-    el.addEventListener('click', () => {
-        if (side === 'from') FROM = code; else TO = code;
-        closeAll();
-        updateSelectors();
-        debounce();
-    });
-    return el;
-}
-
-/* ================================================================
-   SELECTORS
-   ================================================================ */
-function updateSelectors() {
-    const fr = CUR[FROM] || {n:FROM, f:'🌐'};
-    const to = CUR[TO]   || {n:TO,   f:'🌐'};
-
-    fflagEl.textContent = fr.f;
-    fcodeEl.textContent = FROM;
-    fnameEl.textContent = fr.n;
-
-    tflagEl.textContent = to.f;
-    tcodeEl.textContent = TO;
-    tnameEl.textContent = to.n;
-
-    symEl.textContent = SYM[FROM] || FROM;
-
-    markSelected('from');
-    markSelected('to');
-}
-
-function markSelected(side) {
-    const list = side === 'from' ? listFrom : listTo;
-    const sel  = side === 'from' ? FROM : TO;
-    list.querySelectorAll('.opt').forEach(el =>
-        el.classList.toggle('sel', el.dataset.code === sel));
-}
-
-/* ================================================================
-   DROPDOWN
-   ================================================================ */
-function openPanel(side) {
-    closeAll(side);
-    const trg = side === 'from' ? trgFrom : trgTo;
-    const pan = side === 'from' ? panFrom : panTo;
-    const srch = side === 'from' ? srchFrom : srchTo;
-
-    trg.classList.add('open');
-    trg.setAttribute('aria-expanded','true');
-    pan.classList.add('open');
-
-    srch.value = '';
-    filterList(side, '');
-    setTimeout(() => { srch.focus(); scrollToSel(side); }, 40);
-}
-
-function closeAll(except) {
-    ['from','to'].forEach(s => {
-        if (s === except) return;
-        const trg = s === 'from' ? trgFrom : trgTo;
-        const pan = s === 'from' ? panFrom : panTo;
-        trg.classList.remove('open');
-        trg.setAttribute('aria-expanded','false');
-        pan.classList.remove('open');
-    });
-}
-
-function filterList(side, q) {
-    const list = side === 'from' ? listFrom : listTo;
-    const lq   = q.trim().toLowerCase();
-    let count  = 0;
-
-    list.querySelectorAll('.opt').forEach(el => {
-        const code = el.dataset.code.toLowerCase();
-        const name = (CUR[el.dataset.code]?.n || '').toLowerCase();
-        const show = !lq || code.includes(lq) || name.includes(lq);
-        el.style.display = show ? '' : 'none';
-        if (show) count++;
-    });
-
-    let nr = list.querySelector('.no-res');
-    if (!count) {
-        if (!nr) { nr = document.createElement('div'); nr.className='no-res'; nr.textContent='No currencies found'; list.appendChild(nr); }
-        nr.style.display = '';
-    } else if (nr) nr.style.display = 'none';
-}
-
-function scrollToSel(side) {
-    const list = side === 'from' ? listFrom : listTo;
-    const sel  = side === 'from' ? FROM : TO;
-    const el   = list.querySelector(`[data-code="${sel}"]`);
-    if (el) el.scrollIntoView({block:'nearest'});
-}
-
-trgFrom.addEventListener('click', e => { e.stopPropagation(); panFrom.classList.contains('open') ? closeAll() : openPanel('from'); });
-trgTo.addEventListener  ('click', e => { e.stopPropagation(); panTo.classList.contains  ('open') ? closeAll() : openPanel('to'); });
-srchFrom.addEventListener('input', () => filterList('from', srchFrom.value));
-srchTo.addEventListener  ('input', () => filterList('to',   srchTo.value));
-document.addEventListener('click', e => { if (!e.target.closest('#csel-from')) { trgFrom.classList.remove('open'); panFrom.classList.remove('open'); } if (!e.target.closest('#csel-to')) { trgTo.classList.remove('open'); panTo.classList.remove('open'); } });
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeAll(); });
-
-/* ================================================================
-   SWAP
-   ================================================================ */
-swapBtn.addEventListener('click', () => {
-    swapBtn.classList.remove('spin');
-    void swapBtn.offsetWidth; // reflow to restart animation
-    swapBtn.classList.add('spin');
-    swapBtn.addEventListener('animationend', () => swapBtn.classList.remove('spin'), {once:true});
-
-    [FROM, TO] = [TO, FROM];
-    updateSelectors();
-    debounce();
-});
-
-/* ================================================================
-   CONVERT
-   ================================================================ */
-cvtBtn.addEventListener('click', fetchAndConvert);
-amountEl.addEventListener('input', debounce);
-retryBtn.addEventListener('click', fetchAndConvert);
-
-function debounce() {
-    clearTimeout(debTimer);
-    debTimer = setTimeout(fetchAndConvert, 420);
-}
-
-async function fetchAndConvert() {
-    const amt = parseFloat(amountEl.value);
-    if (!amountEl.value || isNaN(amt) || amt <= 0) { showEmpty(); return; }
-
-    showLoading();
-    try {
-        const res  = await fetch(`https://open.er-api.com/v6/latest/${FROM}`);
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        const data = await res.json();
-        if (data.result !== 'success') throw new Error(data['error-type'] || 'API error');
-
-        const rate = data.rates[TO];
-        if (!rate) throw new Error(`No rate for ${TO}`);
-
-        const converted = amt * rate;
-        lastUpd  = data.time_last_update_utc
-            ? new Date(data.time_last_update_utc).toLocaleString()
-            : '';
-        lastResult = {converted, rate, amt};
-
-        showResult(converted, rate);
-        pushHistory(amt, converted, rate);
-        renderHistory();
-
-    } catch(err) {
-        showError(err.message);
-    }
-}
-
-/* ================================================================
-   RESULT DISPLAY HELPERS
-   ================================================================ */
-function showEmpty() {
-    rEmpty.style.display   = 'flex';
-    rLoading.classList.remove('on');
-    rError.classList.remove('on');
-    rResult.classList.remove('on');
-    copyBtn.style.display  = 'none';
-}
-
-function showLoading() {
-    rEmpty.style.display   = 'none';
-    rLoading.classList.add('on');
-    rError.classList.remove('on');
-    rResult.classList.remove('on');
-    copyBtn.style.display  = 'none';
-}
-
-function showError(msg) {
-    rEmpty.style.display   = 'none';
-    rLoading.classList.remove('on');
-    rError.classList.add('on');
-    rResult.classList.remove('on');
-    copyBtn.style.display  = 'none';
-    rErrMsg.textContent    = `Error: ${msg}`;
-}
-
-function showResult(converted, rate) {
-    rEmpty.style.display   = 'none';
-    rLoading.classList.remove('on');
-    rError.classList.remove('on');
-    rResult.classList.remove('on');
-    // trigger reflow to re-play fadeUp
-    void rResult.offsetWidth;
-    rResult.classList.add('on');
-    copyBtn.style.display  = 'flex';
-
-    countUp(resAmount, converted, TO);
-    resLabel.textContent   = `${CUR[TO]?.f || ''} ${CUR[TO]?.n || TO}`;
-    rateTxt.textContent    = `1 ${FROM} = ${fmtRate(rate)} ${TO}`;
-    rateUpd.textContent    = lastUpd ? `Updated: ${lastUpd}` : '';
-}
-
-/* Animated number count-up */
-function countUp(el, target, currency) {
-    const duration = 550;
-    const start    = performance.now();
-
-    function tick(now) {
-        const p = Math.min((now - start) / duration, 1);
-        const e = 1 - Math.pow(1 - p, 3); // ease-out cubic
-        el.textContent = fmtNum(target * e, currency);
-        if (p < 1) requestAnimationFrame(tick);
-        else el.textContent = fmtNum(target, currency);
-    }
-    requestAnimationFrame(tick);
-}
 
 function fmtNum(val, currency) {
     const dec = NO_DEC.has(currency) ? 0 : 2;
@@ -1049,45 +833,6 @@ function fmtRate(rate) {
     return rate.toPrecision(4);
 }
 
-/* ================================================================
-   HISTORY
-   ================================================================ */
-function pushHistory(amt, converted, rate) {
-    history.unshift({FROM, TO, amt, converted, rate, ts: Date.now()});
-    if (history.length > 5) history.pop();
-    localStorage.setItem('ch', JSON.stringify(history));
-}
-
-function renderHistory() {
-    if (!history.length) {
-        histList.innerHTML = '<div class="hist-empty">No conversions yet</div>';
-        return;
-    }
-    histList.innerHTML = '';
-    history.forEach(h => {
-        const fr = CUR[h.FROM] || {f:'🌐'};
-        const to = CUR[h.TO]   || {f:'🌐'};
-        const el = document.createElement('div');
-        el.className = 'hist-item';
-        el.title     = 'Click to restore';
-        el.innerHTML = `
-            <span class="hi-flag">${fr.f}</span>
-            <span class="hi-amount">${fmtNum(h.amt, h.FROM)} ${h.FROM}</span>
-            <span class="hi-arrow">→</span>
-            <span class="hi-flag">${to.f}</span>
-            <span class="hi-result">${fmtNum(h.converted, h.TO)} ${h.TO}</span>
-            <span class="hi-time">${timeAgo(h.ts)}</span>
-        `;
-        el.addEventListener('click', () => {
-            FROM = h.FROM; TO = h.TO;
-            amountEl.value = h.amt;
-            updateSelectors();
-            fetchAndConvert();
-        });
-        histList.appendChild(el);
-    });
-}
-
 function timeAgo(ts) {
     const s = (Date.now() - ts) / 1000;
     if (s < 60)    return 'Just now';
@@ -1096,46 +841,420 @@ function timeAgo(ts) {
     return `${Math.floor(s/86400)}d ago`;
 }
 
-histClear.addEventListener('click', () => {
-    history = [];
-    localStorage.setItem('ch','[]');
-    renderHistory();
+/* ================================================================
+   SHARED FETCH — 5-minute in-memory cache
+   ================================================================ */
+async function fetchRates(base) {
+    if (ratesCache?.base === base && Date.now() - ratesCache.fetchedAt < 300_000) {
+        return ratesCache;
+    }
+    const res  = await fetch(`https://open.er-api.com/v6/latest/${base}`);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    if (data.result !== 'success') throw new Error(data['error-type'] || 'API error');
+    ratesCache = {
+        base,
+        rates:     data.rates,
+        updatedAt: data.time_last_update_utc
+            ? new Date(data.time_last_update_utc).toLocaleString()
+            : '',
+        fetchedAt: Date.now(),
+    };
+    return ratesCache;
+}
+
+/* ================================================================
+   DROPDOWN — shared filter + scroll helpers
+   ================================================================ */
+/* Registry so we can close all panels at once */
+const PANES = {
+    from: { trg: null, pan: null, srch: null, list: null },
+    to:   { trg: null, pan: null, srch: null, list: null },
+    base: { trg: null, pan: null, srch: null, list: null },
+};
+
+function initPanes() {
+    PANES.from = { trg:$('trg-from'), pan:$('pan-from'), srch:$('srch-from'), list:$('list-from') };
+    PANES.to   = { trg:$('trg-to'),   pan:$('pan-to'),   srch:$('srch-to'),   list:$('list-to')   };
+    PANES.base = { trg:$('trg-base'), pan:$('pan-base'), srch:$('srch-base'), list:$('list-base') };
+}
+
+function closeAll(except) {
+    Object.entries(PANES).forEach(([key, p]) => {
+        if (key === except) return;
+        p.trg.classList.remove('open');
+        p.trg.setAttribute('aria-expanded','false');
+        p.pan.classList.remove('open');
+    });
+}
+
+function openPane(side) {
+    closeAll(side);
+    const {trg, pan, srch} = PANES[side];
+    trg.classList.add('open');
+    trg.setAttribute('aria-expanded','true');
+    pan.classList.add('open');
+    srch.value = '';
+    filterList(side, '');
+    setTimeout(() => { srch.focus(); scrollToSel(side); }, 40);
+}
+
+function filterList(side, q) {
+    const list = PANES[side].list;
+    const lq   = q.trim().toLowerCase();
+    let cnt    = 0;
+    list.querySelectorAll('.opt').forEach(el => {
+        const code = el.dataset.code.toLowerCase();
+        const name = (CUR[el.dataset.code]?.n || '').toLowerCase();
+        const show = !lq || code.includes(lq) || name.includes(lq);
+        el.style.display = show ? '' : 'none';
+        if (show) cnt++;
+    });
+    let nr = list.querySelector('.no-res');
+    if (!cnt) {
+        if (!nr) { nr = document.createElement('div'); nr.className='no-res'; nr.textContent='No currencies found'; list.appendChild(nr); }
+        nr.style.display = '';
+    } else if (nr) nr.style.display = 'none';
+}
+
+function scrollToSel(side) {
+    const sel  = side === 'to' ? TO : FROM;
+    const el   = PANES[side].list.querySelector(`[data-code="${sel}"]`);
+    if (el) el.scrollIntoView({block:'nearest'});
+}
+
+function markSel(side) {
+    const sel  = side === 'to' ? TO : FROM;
+    PANES[side].list.querySelectorAll('.opt')
+        .forEach(el => el.classList.toggle('sel', el.dataset.code === sel));
+}
+
+/* ================================================================
+   DISPLAY SYNC
+   ================================================================ */
+/* Called whenever FROM changes — updates converter + dashboard displays */
+function syncFrom() {
+    const d = CUR[FROM] || {n:FROM,f:'🌐'};
+    // Converter FROM trigger
+    $('fflag').textContent = d.f; $('fcode').textContent = FROM; $('fname').textContent = d.n;
+    // Dashboard BASE trigger
+    $('bflag').textContent = d.f; $('bcode').textContent = FROM; $('bname').textContent = d.n;
+    // Amount symbol
+    $('sym').textContent = SYM[FROM] || FROM;
+    // Dashboard headline
+    $('dash-eq').textContent = `1 ${FROM} =`;
+    // Highlight selected in all FROM-related lists
+    markSel('from'); markSel('base');
+}
+
+function syncTo() {
+    const d = CUR[TO] || {n:TO,f:'🌐'};
+    $('tflag').textContent = d.f; $('tcode').textContent = TO; $('tname').textContent = d.n;
+    markSel('to');
+}
+
+/* ================================================================
+   BUILD OPTION LISTS
+   ================================================================ */
+function buildLists() {
+    const entries = Object.entries(CUR).sort((a,b) => a[0].localeCompare(b[0]));
+    entries.forEach(([code, d]) => {
+        PANES.from.list.appendChild(makeOpt(code, d, 'from'));
+        PANES.to.list.appendChild(makeOpt(code, d, 'to'));
+        PANES.base.list.appendChild(makeOpt(code, d, 'base'));
+    });
+}
+
+function makeOpt(code, d, side) {
+    const el = document.createElement('div');
+    el.className = 'opt';
+    el.dataset.code = code;
+    el.setAttribute('role','option');
+    el.innerHTML = `<span class="opt-flag">${d.f}</span><span class="opt-code">${code}</span><span class="opt-name">${d.n}</span>`;
+    el.addEventListener('click', () => {
+        closeAll();
+        if (side === 'to') {
+            TO = code;
+            syncTo();
+            debounce();
+        } else {
+            /* both 'from' and 'base' update the shared FROM variable */
+            FROM = code;
+            syncFrom();
+            if (side === 'base') fetchDashboard();
+            else debounce();
+        }
+    });
+    return el;
+}
+
+/* ================================================================
+   TAB SWITCHING
+   ================================================================ */
+function switchTab(id) {
+    activeTab = id;
+    closeAll();
+    $('tab-conv').classList.toggle('active', id === 'conv');
+    $('tab-dash').classList.toggle('active', id === 'dash');
+    $('panel-conv').classList.toggle('hidden', id !== 'conv');
+    $('panel-dash').classList.toggle('hidden', id !== 'dash');
+    if (id === 'dash') fetchDashboard();
+}
+
+$('tab-conv').addEventListener('click', () => switchTab('conv'));
+$('tab-dash').addEventListener('click', () => switchTab('dash'));
+
+/* ================================================================
+   CONVERTER
+   ================================================================ */
+function debounce() {
+    clearTimeout(debTimer);
+    debTimer = setTimeout(fetchAndConvert, 420);
+}
+
+async function fetchAndConvert() {
+    const amt = parseFloat($('amount').value);
+    if (!$('amount').value || isNaN(amt) || amt <= 0) { showEmpty(); return; }
+
+    showCvtLoading();
+    try {
+        const cache   = await fetchRates(FROM);
+        const rate    = cache.rates[TO];
+        if (!rate) throw new Error(`No rate available for ${TO}`);
+
+        const converted = amt * rate;
+        lastUpd = cache.updatedAt;
+        showResult(converted, rate);
+        pushHistory(amt, converted, rate);
+        renderHistory();
+    } catch(err) {
+        showCvtError(err.message);
+    }
+}
+
+function showEmpty() {
+    $('r-empty').style.display = 'flex';
+    $('r-loading').classList.remove('on');
+    $('r-error').classList.remove('on');
+    $('r-result').classList.remove('on');
+    $('copy-btn').style.display = 'none';
+}
+function showCvtLoading() {
+    $('r-empty').style.display = 'none';
+    $('r-loading').classList.add('on');
+    $('r-error').classList.remove('on');
+    $('r-result').classList.remove('on');
+    $('copy-btn').style.display = 'none';
+}
+function showCvtError(msg) {
+    $('r-empty').style.display = 'none';
+    $('r-loading').classList.remove('on');
+    $('r-error').classList.add('on');
+    $('r-result').classList.remove('on');
+    $('copy-btn').style.display = 'none';
+    $('r-error-msg').textContent = `Error: ${msg}`;
+}
+function showResult(converted, rate) {
+    $('r-empty').style.display = 'none';
+    $('r-loading').classList.remove('on');
+    $('r-error').classList.remove('on');
+    void $('r-result').offsetWidth; // restart animation
+    $('r-result').classList.add('on');
+    $('copy-btn').style.display = 'flex';
+
+    countUp($('res-amount'), converted, TO);
+    $('res-label').textContent  = `${CUR[TO]?.f||''} ${CUR[TO]?.n||TO}`;
+    $('rate-txt').textContent   = `1 ${FROM} = ${fmtRate(rate)} ${TO}`;
+    $('rate-upd').textContent   = lastUpd ? `Updated: ${lastUpd}` : '';
+}
+
+function countUp(el, target, currency) {
+    const start = performance.now();
+    const dur   = 550;
+    (function tick(now) {
+        const p = Math.min((now - start) / dur, 1);
+        const e = 1 - Math.pow(1 - p, 3);
+        el.textContent = fmtNum(target * e, currency);
+        if (p < 1) requestAnimationFrame(tick);
+        else el.textContent = fmtNum(target, currency);
+    })(performance.now());
+}
+
+/* Dropdown events: converter */
+$('trg-from').addEventListener('click', e => { e.stopPropagation(); PANES.from.pan.classList.contains('open') ? closeAll() : openPane('from'); });
+$('trg-to').addEventListener  ('click', e => { e.stopPropagation(); PANES.to.pan.classList.contains('open')   ? closeAll() : openPane('to'); });
+$('srch-from').addEventListener('input', () => filterList('from', $('srch-from').value));
+$('srch-to').addEventListener  ('input', () => filterList('to',   $('srch-to').value));
+
+$('cvt-btn').addEventListener  ('click', fetchAndConvert);
+$('amount').addEventListener   ('input', debounce);
+$('retry-btn').addEventListener('click', fetchAndConvert);
+
+/* Swap */
+$('swap-btn').addEventListener('click', () => {
+    const sb = $('swap-btn');
+    sb.classList.remove('spin'); void sb.offsetWidth; sb.classList.add('spin');
+    sb.addEventListener('animationend', () => sb.classList.remove('spin'), {once:true});
+    [FROM, TO] = [TO, FROM];
+    syncFrom(); syncTo();
+    debounce();
+});
+
+/* Copy */
+$('copy-btn').addEventListener('click', async () => {
+    const txt = $('res-amount').textContent;
+    try {
+        await navigator.clipboard.writeText(txt);
+        $('copy-btn').classList.add('ok'); $('copy-btn').textContent = '✓';
+        showToast('✓', `Copied ${txt}`, 's');
+        setTimeout(() => { $('copy-btn').classList.remove('ok'); $('copy-btn').textContent = '📋'; }, 2000);
+    } catch { showToast('⚠️', 'Copy failed — select manually', 'e'); }
 });
 
 /* ================================================================
-   COPY
+   HISTORY
    ================================================================ */
-copyBtn.addEventListener('click', async () => {
-    const txt = resAmount.textContent;
-    try {
-        await navigator.clipboard.writeText(txt);
-        copyBtn.classList.add('ok');
-        copyBtn.textContent = '✓';
-        toast('✓', `Copied ${txt}`, 's');
-        setTimeout(() => { copyBtn.classList.remove('ok'); copyBtn.textContent = '📋'; }, 2000);
-    } catch {
-        toast('⚠️', 'Copy failed — select manually', 'e');
+function pushHistory(amt, converted, rate) {
+    convHistory.unshift({FROM, TO, amt, converted, rate, ts: Date.now()});
+    if (convHistory.length > 5) convHistory.pop();
+    localStorage.setItem('ch', JSON.stringify(convHistory));
+}
+
+function renderHistory() {
+    if (!convHistory.length) {
+        $('hist-list').innerHTML = '<div class="hist-empty">No conversions yet</div>';
+        return;
     }
+    $('hist-list').innerHTML = '';
+    convHistory.forEach(h => {
+        const fr = CUR[h.FROM]||{f:'🌐'}; const to = CUR[h.TO]||{f:'🌐'};
+        const el = document.createElement('div');
+        el.className = 'hist-item'; el.title = 'Click to restore';
+        el.innerHTML = `
+            <span class="hi-flag">${fr.f}</span>
+            <span class="hi-amount">${fmtNum(h.amt,h.FROM)} ${h.FROM}</span>
+            <span class="hi-arrow">→</span>
+            <span class="hi-flag">${to.f}</span>
+            <span class="hi-result">${fmtNum(h.converted,h.TO)} ${h.TO}</span>
+            <span class="hi-time">${timeAgo(h.ts)}</span>
+        `;
+        el.addEventListener('click', () => {
+            FROM = h.FROM; TO = h.TO;
+            $('amount').value = h.amt;
+            syncFrom(); syncTo();
+            switchTab('conv');
+            fetchAndConvert();
+        });
+        $('hist-list').appendChild(el);
+    });
+}
+
+$('hist-clear').addEventListener('click', () => {
+    convHistory = []; localStorage.setItem('ch','[]'); renderHistory();
 });
+
+/* ================================================================
+   DASHBOARD
+   ================================================================ */
+async function fetchDashboard() {
+    /* show loading state */
+    $('dash-loading').classList.add('on');
+    $('dash-error').classList.remove('on');
+    $('rates-grid').style.display = 'none';
+    const btn = $('dash-refresh');
+    btn.classList.add('spinning');
+
+    try {
+        const cache = await fetchRates(FROM);
+        renderRateCards(cache);
+    } catch(err) {
+        $('dash-loading').classList.remove('on');
+        $('dash-error').classList.add('on');
+        $('dash-err-msg').textContent = `Error: ${err.message}`;
+    } finally {
+        btn.classList.remove('spinning');
+    }
+}
+
+function renderRateCards(cache) {
+    const grid = $('rates-grid');
+    grid.innerHTML = '';
+
+    MAJOR.forEach(code => {
+        if (!CUR[code]) return;
+
+        const isBase = code === cache.base;
+        const rate   = isBase ? 1 : cache.rates[code];
+        if (!rate && !isBase) return;
+
+        const card = document.createElement('div');
+        card.className = `rate-card${isBase ? ' is-base' : ''}`;
+
+        const rateEl = isBase
+            ? `<span class="rc-base-tag">BASE</span>`
+            : `<div class="rc-rate">${fmtNum(rate, code)}</div>`;
+
+        card.innerHTML = `
+            <span class="rc-flag">${CUR[code].f}</span>
+            <div class="rc-info">
+                <div class="rc-code">${code}</div>
+                <div class="rc-name">${CUR[code].n}</div>
+            </div>
+            ${rateEl}
+        `;
+
+        if (!isBase) {
+            card.title = `Use ${code} in converter`;
+            card.addEventListener('click', () => {
+                TO = code; syncTo();
+                switchTab('conv');
+                fetchAndConvert();
+            });
+        }
+
+        grid.appendChild(card);
+    });
+
+    $('dash-loading').classList.remove('on');
+    $('dash-error').classList.remove('on');
+    grid.style.display = '';
+
+    $('dash-upd').textContent = cache.updatedAt ? `Updated: ${cache.updatedAt}` : '';
+    $('dash-eq').textContent  = `1 ${cache.base} =`;
+}
+
+/* Dashboard dropdown events */
+$('trg-base').addEventListener('click', e => { e.stopPropagation(); PANES.base.pan.classList.contains('open') ? closeAll() : openPane('base'); });
+$('srch-base').addEventListener('input', () => filterList('base', $('srch-base').value));
+$('dash-refresh').addEventListener('click', () => { ratesCache = null; fetchDashboard(); });
+$('dash-retry').addEventListener('click', fetchDashboard);
+
+/* Global close on outside click */
+document.addEventListener('click', e => {
+    if (!e.target.closest('.csel')) closeAll();
+});
+document.addEventListener('keydown', e => { if (e.key==='Escape') closeAll(); });
 
 /* ================================================================
    TOAST
    ================================================================ */
 let toastTimer = null;
-function toast(ico, txt, type='s') {
-    tIco.textContent = ico;
-    tTxt.textContent = txt;
-    toastEl.className = `toast ${type} show`;
+function showToast(ico, txt, type='s') {
+    $('t-ico').textContent = ico; $('t-txt').textContent = txt;
+    $('toast').className   = `toast ${type} show`;
     clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => toastEl.classList.remove('show'), 3000);
+    toastTimer = setTimeout(() => $('toast').classList.remove('show'), 3000);
 }
 
 /* ================================================================
    BOOT
    ================================================================ */
-updateSelectors();
+initPanes();
+buildLists();
+syncFrom();
+syncTo();
 renderHistory();
-fetchAndConvert();
+fetchAndConvert(); // auto-convert on load
 </script>
 </body>
 </html>
