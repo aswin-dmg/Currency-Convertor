@@ -963,9 +963,15 @@ function syncFrom() {
     $('fflag').textContent = d.f; $('fcode').textContent = FROM; $('fname').textContent = d.n;
     // Dashboard BASE trigger
     $('bflag').textContent = d.f; $('bcode').textContent = FROM; $('bname').textContent = d.n;
-    // Amount symbols
-    $('sym').textContent      = SYM[FROM] || FROM;
-    $('dash-sym').textContent = SYM[FROM] || FROM;
+    // Amount symbols — hide sym + reduce padding when no short symbol exists
+    const _sym = SYM[FROM] || '';
+    const _hasSym = !!_sym;
+    $('sym').textContent           = _sym;
+    $('sym').style.display         = _hasSym ? '' : 'none';
+    $('amount').style.paddingLeft  = _hasSym ? '48px' : '16px';
+    $('dash-sym').textContent           = _sym;
+    $('dash-sym').style.display         = _hasSym ? '' : 'none';
+    $('dash-amount').style.paddingLeft  = _hasSym ? '46px' : '16px';
     // Dashboard headline
     const _a = parseFloat($('dash-amount')?.value) || 1;
     $('dash-eq').textContent = `${fmtNum(_a, FROM)} ${FROM} =`;
