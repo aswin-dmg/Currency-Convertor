@@ -154,6 +154,21 @@
             box-shadow:0 0 0 3px rgba(124,58,237,.12);
         }
 
+        /* Dashboard amount — same look, slightly tighter */
+        #dash-amount {
+            width:100%;padding:13px 13px 13px 46px;
+            background:rgba(255,255,255,.04);border:1px solid var(--glass-border);
+            border-radius:var(--radius);color:var(--text);font-size:1.35rem;font-weight:800;
+            outline:none;transition:var(--transition);-moz-appearance:textfield;
+        }
+        #dash-amount::-webkit-inner-spin-button,
+        #dash-amount::-webkit-outer-spin-button { -webkit-appearance:none; }
+        #dash-amount::placeholder { color:var(--text-3);font-weight:400; }
+        #dash-amount:focus {
+            border-color:rgba(124,58,237,.55);background:rgba(124,58,237,.06);
+            box-shadow:0 0 0 3px rgba(124,58,237,.12);
+        }
+
         .sel-row {
             display:grid;grid-template-columns:1fr 44px 1fr;
             align-items:end;gap:10px;margin-bottom:20px;
@@ -656,7 +671,16 @@
                     </div>
                 </div>
 
-                <!-- "1 XXX =" headline -->
+                <!-- Amount input -->
+                <div style="margin-bottom:16px">
+                    <label class="label" for="dash-amount">Amount</label>
+                    <div class="amount-wrap">
+                        <span class="sym" id="dash-sym">₹</span>
+                        <input type="number" id="dash-amount" placeholder="0.00" value="1" min="0" step="any" autocomplete="off">
+                    </div>
+                </div>
+
+                <!-- "1,000 XXX =" headline -->
                 <div class="dash-headline">
                     <span class="dash-eq" id="dash-eq">1 INR =</span>
                     <span class="dash-eq-sub">30 major world currencies · click any to convert</span>
@@ -939,10 +963,12 @@ function syncFrom() {
     $('fflag').textContent = d.f; $('fcode').textContent = FROM; $('fname').textContent = d.n;
     // Dashboard BASE trigger
     $('bflag').textContent = d.f; $('bcode').textContent = FROM; $('bname').textContent = d.n;
-    // Amount symbol
-    $('sym').textContent = SYM[FROM] || FROM;
+    // Amount symbols
+    $('sym').textContent      = SYM[FROM] || FROM;
+    $('dash-sym').textContent = SYM[FROM] || FROM;
     // Dashboard headline
-    $('dash-eq').textContent = `1 ${FROM} =`;
+    const _a = parseFloat($('dash-amount')?.value) || 1;
+    $('dash-eq').textContent = `${fmtNum(_a, FROM)} ${FROM} =`;
     // Highlight selected in all FROM-related lists
     markSel('from'); markSel('base');
 }
@@ -998,7 +1024,12 @@ function switchTab(id) {
     $('tab-dash').classList.toggle('active', id === 'dash');
     $('panel-conv').classList.toggle('hidden', id !== 'conv');
     $('panel-dash').classList.toggle('hidden', id !== 'dash');
-    if (id === 'dash') fetchDashboard();
+    if (id === 'dash') {
+        $('dash-amount').value = $('amount').value; // keep amount in sync
+        fetchDashboard();
+    } else {
+        $('amount').value = $('dash-amount').value;
+    }
 }
 
 $('tab-conv').addEventListener('click', () => switchTab('conv'));
@@ -1087,7 +1118,10 @@ $('srch-from').addEventListener('input', () => filterList('from', $('srch-from')
 $('srch-to').addEventListener  ('input', () => filterList('to',   $('srch-to').value));
 
 $('cvt-btn').addEventListener  ('click', fetchAndConvert);
-$('amount').addEventListener   ('input', debounce);
+$('amount').addEventListener('input', () => {
+    $('dash-amount').value = $('amount').value;
+    debounce();
+});
 $('retry-btn').addEventListener('click', fetchAndConvert);
 
 /* Swap */
@@ -1177,22 +1211,24 @@ async function fetchDashboard() {
 }
 
 function renderRateCards(cache) {
+    const amt  = parseFloat($('dash-amount').value) || 1;
     const grid = $('rates-grid');
     grid.innerHTML = '';
 
     MAJOR.forEach(code => {
         if (!CUR[code]) return;
 
-        const isBase = code === cache.base;
-        const rate   = isBase ? 1 : cache.rates[code];
+        const isBase   = code === cache.base;
+        const rate     = isBase ? 1 : cache.rates[code];
         if (!rate && !isBase) return;
 
         const card = document.createElement('div');
         card.className = `rate-card${isBase ? ' is-base' : ''}`;
 
+        /* For non-base cards: show amt × rate; for base: show "BASE" tag */
         const rateEl = isBase
             ? `<span class="rc-base-tag">BASE</span>`
-            : `<div class="rc-rate">${fmtNum(rate, code)}</div>`;
+            : `<div class="rc-rate">${fmtNum(amt * rate, code)}</div>`;
 
         card.innerHTML = `
             <span class="rc-flag">${CUR[code].f}</span>
@@ -1220,7 +1256,7 @@ function renderRateCards(cache) {
     grid.style.display = '';
 
     $('dash-upd').textContent = cache.updatedAt ? `Updated: ${cache.updatedAt}` : '';
-    $('dash-eq').textContent  = `1 ${cache.base} =`;
+    $('dash-eq').textContent  = `${fmtNum(amt, cache.base)} ${cache.base} =`;
 }
 
 /* Dashboard dropdown events */
@@ -1228,6 +1264,13 @@ $('trg-base').addEventListener('click', e => { e.stopPropagation(); PANES.base.p
 $('srch-base').addEventListener('input', () => filterList('base', $('srch-base').value));
 $('dash-refresh').addEventListener('click', () => { ratesCache = null; fetchDashboard(); });
 $('dash-retry').addEventListener('click', fetchDashboard);
+
+/* Dashboard amount — sync to converter and re-render cards */
+$('dash-amount').addEventListener('input', () => {
+    $('amount').value = $('dash-amount').value;
+    if (ratesCache?.base === FROM) renderRateCards(ratesCache);
+    debounce();
+});
 
 /* Global close on outside click */
 document.addEventListener('click', e => {
